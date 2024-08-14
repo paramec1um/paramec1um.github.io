@@ -428,7 +428,7 @@
 </ul>
 <p>这样就能形成一个相遇问题，减少走完全程需要的步骤。<br>而剩余的两个感染源中，我们选取离 $A$ 最远的感染源，记录距离为 $k$<br>则答案显然为  $floor(\frac{n+(n-k)}{2})$</p>
 <p>推导到这里发现答案只与 $k$ 有关<br>而由于 $A$ 是任取的，所以实际上的 $k$ 应为三个感染源两两之间距离的最大值。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="c++&#123;.line-numbers&#125;">#include &lt;bits/stdc++.h&gt;
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
 typedef long long ll;
 const int maxn=1e5+10;
@@ -717,6 +717,8 @@ int main() &#123;
 
 
 <!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
