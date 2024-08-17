@@ -400,7 +400,7 @@ header .side-nav .menu-list a {
 
 .mobile-menu-list a i {
     margin-left: 8px !important;
-    font-size: 1.16rem;
+    font-size: 1.16rem;!important;
     color: #047af1 !important;
 }
 
