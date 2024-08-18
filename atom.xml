@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Paramec1um</title>
+  
+  <subtitle>Paramec1um 个人博客</subtitle>
+  <link href="https://paramec1um.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://paramec1um.github.io/"/>
+  <updated>2024-08-17T14:01:15.769Z</updated>
+  <id>https://paramec1um.github.io/</id>
+  
+  <author>
+    <name>Paramec1um</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>融合矿石</title>
+    <link href="https://paramec1um.github.io/2024/081717653.html"/>
+    <id>https://paramec1um.github.io/2024/081717653.html</id>
+    <published>2024-08-17T10:43:07.000Z</published>
+    <updated>2024-08-17T14:01:15.769Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>cats 的电脑中毒</title>
+    <link href="https://paramec1um.github.io/2024/081417424.html"/>
+    <id>https://paramec1um.github.io/2024/081417424.html</id>
+    <published>2024-08-14T11:29:03.000Z</published>
+    <updated>2024-08-17T14:01:15.769Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2024 杭电多校(8) L&lt;br&gt;&lt;a href=&quot;https://vjudge.net/problem/HDU-7528&quot;&gt;https://vjudge.net/problem/HDU-7528&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;题目大意&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="公式" scheme="https://paramec1um.github.io/tags/%E5%85%AC%E5%BC%8F/"/>
+    
+  </entry>
+  
+</feed>
