@@ -22,7 +22,7 @@
     
     <style>
         body{
-            background-image: url(../medias/images/005.jpg);
+            background-image: url(../medias/images/001.jpg);
             background-repeat:no-repeat; /*不重复*/
             background-size: 100% 100%; /*等比例铺满*/
             background-attachment:fixed; /*不随屏幕滚动*/
@@ -288,7 +288,19 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">cats 的电脑中毒</h1>
+                    <script src="/libs/typed/typed.js"></script>
+                    
+                        <script>
+                            var typedObj = new Typed("#post-title", {
+                                strings: [ 'cats 的电脑中毒' ],
+                                startDelay: 100,
+                                typeSpeed: 100,
+                                loop: false,
+                                backSpeed: 50,
+                                showCursor: true
+                            });
+                        </script>
+                    
                 </div>
             </div>
         </div>
@@ -805,13 +817,13 @@
 <script>
     new Valine({
         el: '#vcomments',
-        appId: '',
-        appKey: '',
+        appId: 'J8hC2HEwE6g5mErdBcxGDkAY-gzGzoHsz',
+        appKey: 'gxzWCssIHZbEtgL5rp1OjMkR',
         serverURLs: '',
         notify: 'false' === 'true',
         verify: 'true' === 'true',
         visitor: '' === 'true',
-        avatar: 'hide',
+        avatar: 'identicon',
         pageSize: '10',
         lang: 'zh-cn',
         placeholder: '说点什么吧！'
@@ -820,6 +832,12 @@
 
 <!--酷Q推送-->
 
+<!-- 直达评论 -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
 
     
 
@@ -838,31 +856,43 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/081717653.html">
+                <a href="/2024/082034656.html">
                     <div class="card-image">
                         
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="融合矿石">
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="数据结构模板">
                         
-                        <span class="card-title">融合矿石</span>
+                        <span class="card-title">数据结构模板</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            数据结构的算法模板
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-20
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Paramec1um
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%A8%A1%E6%9D%BF/" class="post-category">
+                                    模板
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A8%A1%E6%9D%BF/">
+                        <span class="chip bg-color">模板</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1324,15 +1354,6 @@ $(function () {
 
     
     
-    
-        
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura-reduce.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 雪花特效 -->

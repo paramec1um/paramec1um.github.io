@@ -22,7 +22,7 @@
     
     <style>
         body{
-            background-image: url(../medias/images/005.jpg);
+            background-image: url(../medias/images/001.jpg);
             background-repeat:no-repeat; /*不重复*/
             background-size: 100% 100%; /*等比例铺满*/
             background-attachment:fixed; /*不随屏幕滚动*/
@@ -318,16 +318,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-<script>
-    
-      var bannerUrl = "/medias/featureimages/" + Math.floor(Math.random() * 24) + '.jpg';
-    
-    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
-
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -347,10 +338,37 @@
             <div class="tag-chips">
                 
                 
+                <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="数学" style="background-color: #F9EBEA;">数学
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/%E5%85%AC%E5%BC%8F/" title="公式: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="公式" style="background-color: #F9EBEA;">公式
+                            data-tagname="公式" style="background-color: #F5EEF8;">公式
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A8%A1%E6%9D%BF/" title="模板: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="模板" style="background-color: #D5F5E3;">模板
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A8%A1%E6%9D%BF-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/" title="模板 计算几何: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="模板 计算几何" style="background-color: #E8F8F5;">模板 计算几何
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -379,7 +397,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"公式","weight":1,"link":"/tags/公式/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"数学","weight":1,"link":"/tags/数学/"},{"text":"公式","weight":1,"link":"/tags/公式/"},{"text":"模板","weight":1,"link":"/tags/模板/"},{"text":"模板 计算几何","weight":1,"link":"/tags/模板-计算几何/"}], {
         autoResize: true
     });
 </script>
@@ -667,15 +685,6 @@ $(function () {
 
     
     
-    
-        
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura-reduce.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 雪花特效 -->

@@ -33,15 +33,9 @@
     }
 }
 
+
 body {
-    /*
-    background-color: #eaeaea;
-    margin: 0;
-    color: #34495e;
-    overflow-x: hidden;
-    overflow-y: auto;
-    */
-    background-image: url(../medias/images/005.jpg);
+    
     background-repeat: repeat;      /*no-repeat: 不重复铺*/       
     background-size: 100% 100%;     /*等比例铺满屏幕*/ 
     background-attachment: fixed;   /*不随屏幕滚动而滚动*/
@@ -98,25 +92,64 @@ p {
     line-height: 1.5rem;
 }
 
+/*直达评论按钮样式*/
+.comment-scroll {
+    position: fixed;
+    right: 15px;
+    bottom: 135px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
+
+/*直达评论按钮样式*/
+.comment-scroll .btn-floating {
+    background: linear-gradient(to bottom right, #FF9999 0%, #ff6666 100%);
+    width: 48px;
+    height: 48px;
+}
+
+/*直达评论按钮样式*/
+.comment-scroll .btn-floating i {
+    line-height: 48px;
+    font-size: 1.8rem;
+}
+
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255,193,187,1);
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 3em;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(119,152,250,0.5);
+    border-radius: 3em;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 15px;
+}
+
 /*文章分割线的颜色*/
 hr {
     margin: 20px 0;
     border: 0;
-    border-top: 1px solid #f44336;
+    border-top: 1px solid rgba(255,193,187,1);
 }
 
 
 blockquote {
     border-left: 5px solid rgba(255,183,197,1);
     padding: 1rem 0.8rem 0.2rem 0.8rem;
-    color: #666;
+    color: rgba(255,183,197,1);
     background-color: rgba(66, 94, 185, 0.1);
 }
 
 pre {
     padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
     margin: 1rem 0 !important;
-    background: #272822;
+    background: #272822; /*???*/
     overflow: auto;
     border-radius: 0.35rem;
     tab-size: 4;
@@ -131,16 +164,16 @@ pre {
     top: 0;
     left: 12px;
     margin-top: 12px;
-    /*-webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #2364c6;
-    box-shadow: 20px 0 #ffbd2e, 40px 0 #2364c6; */
 }
+
+/*单行代码块颜色*/
 code {
     padding: 1px 5px;
     top: 13px !important;
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
     font-size: 0.91rem;
     color: #e96900;
-    background-color: #f8f8f8;
+    background-color: #000000;
     border-radius: 2px;
 }
 .code_copy {
@@ -224,6 +257,7 @@ pre[class*="language-"] {
 
 
 /* 键盘 kbd 标签样式 */
+/*???*/
 kbd {
     margin: 0 3px;
     padding: 3px 5px;
@@ -233,8 +267,8 @@ kbd {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 0.9rem;
     font-weight: 600;
-    background-color: #f8f8f8;
-    color: #34495e;
+    background-color: #f21010;
+    color: #5e3434;
     line-height: 1.8rem;
     white-space: nowrap;
 }
@@ -256,15 +290,17 @@ cite {
     font-style: normal;
 }
 
+/*???*/
 mark {
-    background-color: #fcf8e3;
+    background-color: #07ec1a;
     padding: .2em;
 }
 
+/*toc样式*/
 .toc-widget {
     width: 345px;
     padding-left: 20px;
-    background-color: #2e2e2e !important;
+    background-color: #3b414b !important;
     border-radius: 10px;
     box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
 }
@@ -273,7 +309,7 @@ mark {
 
 .card {
     border-radius: 10px;
-    background-color: #333439;
+    background-color: #3b414b;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
     opacity: 0.95;
 }
@@ -288,20 +324,23 @@ mark {
     margin-bottom: 0;
 }
 
+/*导航栏演示 */
 .bg-color {
-    /*background-image: linear-gradient(to right, #de4094 0%, #de4094 100%);*/
     background-image: linear-gradient(to right, rgba(119, 152, 250, 0.5), rgba(255, 183, 197,1));
     
     opacity: 0.8;
 }
 
+/*???*/
 .text-color {
     color: #fff !important;
 }
 
+/*???*/
 .white-color {
     color: #fff;
 }
+
 
 .progress-bar {
     height: 4px;
@@ -392,12 +431,14 @@ header .side-nav .menu-list li {
 
 }
 
+/*???*/
 header .side-nav .menu-list a {
     height: 50px;
     line-height: 50px;
     color: #067bf1 !important;
 }
 
+/*???*/
 .mobile-menu-list a i {
     margin-left: 8px !important;
     font-size: 1.16rem;
@@ -434,8 +475,8 @@ header .side-nav .social-link {
     height: 45px;
     line-height: 45px;
     font-size: 1rem;
-    color: #f44336;
-    border: 1px solid #f44336;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     background-color: transparent;
     border-radius: 30px;
     box-shadow: none;
@@ -455,6 +496,7 @@ header .side-nav .social-link {
     padding-right: 5px;
 }
 
+/*???*/
 .scroll-down {
     background: #333;
     margin: 100px auto;
@@ -568,7 +610,7 @@ header .side-nav .social-link {
 .cover-social-link a {
     padding: 0 15px;
     font-size: 1.35rem;
-    color: #f44336;
+    color: #ffffff;
 }
 
 header .go-back {
@@ -596,14 +638,15 @@ header .go-back i {
     border: 0;
     overflow: hidden;
     background-position: center center;
-    background-size: 0%;
+    background-size: 100%;
     background-repeat: no-repeat;
     transform: translate3d(0px, 0px, 0px);
 }
 
+/*???*/
 .index-cover {
     height: 100vh;
-    color: #3e0f9d;
+    color: rgba(255,183,197,1);
 }
 
 .post-cover {
@@ -845,6 +888,7 @@ header .go-back i {
     border-radius: 10px;
 }
 
+/**/
 .recommend .post-card {
     position: relative;
     width: 100%;
@@ -934,12 +978,14 @@ header .go-back i {
     margin-bottom: 10px;
 }
 
+/*文章卡片上的分类按钮颜色*/
 article a {
     margin-right: 0 !important;
-    color: #525f7f;
+    color: #ececec;
     text-transform: none !important;
 }
 
+/*文章卡片上的分类按钮点击颜色*/
 article a:hover {
     font-weight: bold;
     color: rgba(255,183,197,1);/**/
@@ -1003,13 +1049,14 @@ article .card .card-action {
     border-radius: 0 0 8px 8px !important;
 }
 
+/*文章卡片下方标签内字体的颜色*/
 article .article-tags .chip {
     margin: 2px;
     font-size: 0.8rem;
     font-weight: 400;
     height: 22px;
     line-height: 22px;
-    color: #fff;
+    color: #3b414b;/*黑色*/
     border-radius: 10px;
 }
 
@@ -1017,6 +1064,7 @@ article .article-tags .chip {
     margin-left: -0.75rem;
 }
 
+/*文章内容底部的推荐，“下一篇”与“本篇”的背景色*/
 .prev-next .article-badge {
     min-width: 3rem;
     margin-top: 7px;
@@ -1027,7 +1075,8 @@ article .article-tags .chip {
     position: absolute;
     box-sizing: border-box;
     z-index: 200;
-    background-color: #fff;
+    color:#00ff00;/*绿色*/
+    background-color: #3b414b;/*黑色*/
     font-weight: 500;
 }
 
@@ -1051,7 +1100,7 @@ article .article-tags .chip {
 
 .paging .page-info {
     font-size: 1.4rem;
-    color: #888;
+    color: #00ff00;
     padding-top: 1rem;
 }
 
@@ -1060,11 +1109,11 @@ article .article-tags .chip {
 }
 
 .paging .disabled {
-    background-color: #ccc !important;
+    background-color: #00ff00 !important;
 }
 
 .paging .disabled i {
-    color: #999 !important;
+    color: #00ff00 !important;
 }
 
 /*文章详情样式*/
@@ -1151,13 +1200,14 @@ article .article-tags .chip {
     text-decoration: underline;
 }
 
+/*文章分割线上方阅读人数的字体颜色*/
 #artDetail .post-info {
-    color: #525f7f;
+    color: rgba(255,183,197,1);
 }
 
 #artDetail .post-info .post-category {
     padding-right: 4px;
-    color: #525f7f;
+    color: #00ff00;
 }
 
 #artDetail .post-info .post-category:hover {
@@ -1166,8 +1216,9 @@ article .article-tags .chip {
     text-decoration: underline;
 }
 
+/*文章分割线上方阅读人数的日期颜色*/
 #artDetail .post-info .post-date {
-    color: #525f7f;
+    color: rgba(255,183,197,1);
 }
 
 #artDetail .post-info .post-word-count {
@@ -1176,7 +1227,7 @@ article .article-tags .chip {
 
 #artDetail .post-info .post-read {
     margin-left: 15px;
-    color: #525f7f;
+    color: #00ff00;/*绿色*/
 }
 
 #artDetail .article-card-content {
@@ -1225,7 +1276,7 @@ article .article-tags .chip {
 
 #artDetail .reprint a {
     font-size: 1.05rem;
-    color: rgba(255,183,197,1);/**/
+    color: rgba(255,183,197,1);/*粉色*/
     font-weight: 500;
 }
 
@@ -1242,7 +1293,7 @@ article .article-tags .chip {
 /*链接颜色*/
 #articleContent a {
     padding: 0 2px;
-    color: rgba(255,183,197,1);/**/
+    color: rgba(255,183,197,1);/*粉色*/
     font-weight: 500;
     text-decoration: underline;
     word-wrap: break-word;

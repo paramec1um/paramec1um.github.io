@@ -22,7 +22,7 @@
     
     <style>
         body{
-            background-image: url(../medias/images/005.jpg);
+            background-image: url(../medias/images/001.jpg);
             background-repeat:no-repeat; /*不重复*/
             background-size: 100% 100%; /*等比例铺满*/
             background-attachment:fixed; /*不随屏幕滚动*/
@@ -318,16 +318,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-<script>
-    
-      var bannerUrl = "/medias/featureimages/" + Math.floor(Math.random() * 24) + '.jpg';
-    
-    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
-
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -348,11 +339,20 @@
                 
                 
                 
-                <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" title="刷题集: 1">
+                <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" title="刷题集: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">刷题集
-                        <span class="tag-length">1</span>
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E6%A8%A1%E6%9D%BF/" title="模板: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">模板
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -399,7 +399,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"刷题集","max":2}],
+            indicator: [{"name":"刷题集","max":4},{"name":"模板","max":4}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -410,7 +410,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1],
+                    value : [2,2],
                     name : '文章分类数量'
                 }
             ]
@@ -703,15 +703,6 @@ $(function () {
 
     
     
-    
-        
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura-reduce.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 雪花特效 -->
