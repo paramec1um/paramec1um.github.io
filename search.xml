@@ -1,61 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>cats 的电脑中毒</title>
-    <url>/2024/081417424.html</url>
-    <content><![CDATA[<p>2024 杭电多校(8) L<br><a href="https://vjudge.net/problem/HDU-7528">https://vjudge.net/problem/HDU-7528</a></p>
-<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>定义两个 $01$ 串相邻当且仅当两个字符串只有一个字符不同。现在规定 $01$ 串长度是 $n$ ，在所有的 $2^n$ 个 $01$ 串中给出三个被感染的 $01$ 串，这些 $01$ 串每轮会把相邻的所有字符串感染，问经过多少轮之后，所有的 $01$ 串都被感染。</p>
-<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p>$2&lt;=n&lt;=2\cdot10^5$</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>首先定义两个字符串的距离：<br>由于一个字符串与相邻的字符串只有一个字符不同<br>所以当两个字符串有 $n$ 个字符不同的时候，定义它们距离为 $n$</p>
-<p>显然，每个长度为 $n$ 的字符串都有一个距离为 $n$ 的反串与之对应<br>对于感染的过程。</p>
-<p>不难发现只有一个感染源的时候，以这个感染源开始感染，一直到这个感染源的尽头才能够全部感染，答案显然为 $n$。</p>
-<p>我们任取三个感染源之一 $A$ 作为根，那么其余的感染源都在 $A$ 的感染路径上。</p>
-<p>考虑如何做才能缩短感染的路径，同时保证感染进行完全：</p>
-<ul>
-<li><p>为了确保感染进行完全，其他的感染源必须回到感染起点或者感染终点，之后再掉头感染一遍。</p>
-</li>
-<li><p>回到起点肯定会浪费更多之间，因为起点已经开始感染，所以肯定要去到感染终点，之后掉头向起点的方向感染。</p>
-</li>
-</ul>
-<p>这样就能形成一个相遇问题，减少走完全程需要的步骤。<br>而剩余的两个感染源中，我们选取离 $A$ 最远的感染源，记录距离为 $k$<br>则答案显然为  $floor(\frac{n+(n-k)}{2})$</p>
-<p>推导到这里发现答案只与 $k$ 有关<br>而由于 $A$ 是任取的，所以实际上的 $k$ 应为三个感染源两两之间距离的最大值。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> maxn<span class="token operator">=</span><span class="token number">1e5</span><span class="token operator">+</span><span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> ll mod<span class="token operator">=</span><span class="token number">1e9</span><span class="token operator">+</span><span class="token number">7</span><span class="token punctuation">;</span>
-
-<span class="token keyword">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
-    string s1<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>s3<span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>s1<span class="token operator">&gt;&gt;</span>s2<span class="token operator">&gt;&gt;</span>s3<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> cnt1<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>cnt2<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>cnt3<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>s2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>cnt1<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s3<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>s2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>cnt2<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>s3<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>cnt3<span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">int</span> mx<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>cnt1<span class="token punctuation">,</span><span class="token function">max</span><span class="token punctuation">(</span>cnt2<span class="token punctuation">,</span>cnt3<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout<span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>n<span class="token operator">-</span>mx<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    ios<span class="token double-colon punctuation">::</span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cout<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> T<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>T<span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>T<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+    <title>数学建模课堂笔记1</title>
+    <url>/2024/082862472.html</url>
+    <content><![CDATA[<h1 id="1-可以参加的比赛"><a href="#1-可以参加的比赛" class="headerlink" title="1.可以参加的比赛"></a>1.可以参加的比赛</h1><p>大湾区杯、数模美赛、APMCM、华数杯、深圳杯、国赛</p>
+<h1 id="2-常见模型"><a href="#2-常见模型" class="headerlink" title="2.常见模型"></a>2.常见模型</h1><p>优化问题：数学规划，动态规划，模拟退火，遗传算法</p>
+<p>预测问题：回归分析，马尔可夫预测，灰色预测，时间序列预测，神经网络预测</p>
+<p>评价问题：灰色关联分析，层次分析，主成分分析法</p>
+<p>统计分析：聚类算法，回归分析，关联分析，方差分析，决策树</p>
+<p>图论模型：最小生成树，最短路，旅行商</p>
+<h1 id="3-常用软件"><a href="#3-常用软件" class="headerlink" title="3. 常用软件"></a>3. 常用软件</h1><p>写作：Latex</p>
+<p>数学规划：Python</p>
+<p>数据分析：SPSS，Excel</p>
+<p>画图：Visio，Powerpoint，Matlab，Python</p>
 ]]></content>
       <categories>
-        <category>刷题集</category>
+        <category>课堂笔记</category>
       </categories>
       <tags>
-        <tag>公式</tag>
+        <tag>笔记 数学建模</tag>
       </tags>
   </entry>
   <entry>
@@ -304,6 +267,64 @@ Line e<span class="token punctuation">[</span>maxn<span class="token punctuation
       </tags>
   </entry>
   <entry>
+    <title>cats 的电脑中毒</title>
+    <url>/2024/081417424.html</url>
+    <content><![CDATA[<p>2024 杭电多校(8) L<br><a href="https://vjudge.net/problem/HDU-7528">https://vjudge.net/problem/HDU-7528</a></p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>定义两个 $01$ 串相邻当且仅当两个字符串只有一个字符不同。现在规定 $01$ 串长度是 $n$ ，在所有的 $2^n$ 个 $01$ 串中给出三个被感染的 $01$ 串，这些 $01$ 串每轮会把相邻的所有字符串感染，问经过多少轮之后，所有的 $01$ 串都被感染。</p>
+<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p>$2&lt;=n&lt;=2\cdot10^5$</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>首先定义两个字符串的距离：<br>由于一个字符串与相邻的字符串只有一个字符不同<br>所以当两个字符串有 $n$ 个字符不同的时候，定义它们距离为 $n$</p>
+<p>显然，每个长度为 $n$ 的字符串都有一个距离为 $n$ 的反串与之对应<br>对于感染的过程。</p>
+<p>不难发现只有一个感染源的时候，以这个感染源开始感染，一直到这个感染源的尽头才能够全部感染，答案显然为 $n$。</p>
+<p>我们任取三个感染源之一 $A$ 作为根，那么其余的感染源都在 $A$ 的感染路径上。</p>
+<p>考虑如何做才能缩短感染的路径，同时保证感染进行完全：</p>
+<ul>
+<li><p>为了确保感染进行完全，其他的感染源必须回到感染起点或者感染终点，之后再掉头感染一遍。</p>
+</li>
+<li><p>回到起点肯定会浪费更多之间，因为起点已经开始感染，所以肯定要去到感染终点，之后掉头向起点的方向感染。</p>
+</li>
+</ul>
+<p>这样就能形成一个相遇问题，减少走完全程需要的步骤。<br>而剩余的两个感染源中，我们选取离 $A$ 最远的感染源，记录距离为 $k$<br>则答案显然为  $floor(\frac{n+(n-k)}{2})$</p>
+<p>推导到这里发现答案只与 $k$ 有关<br>而由于 $A$ 是任取的，所以实际上的 $k$ 应为三个感染源两两之间距离的最大值。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> maxn<span class="token operator">=</span><span class="token number">1e5</span><span class="token operator">+</span><span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> ll mod<span class="token operator">=</span><span class="token number">1e9</span><span class="token operator">+</span><span class="token number">7</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
+    string s1<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>s3<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>s1<span class="token operator">&gt;&gt;</span>s2<span class="token operator">&gt;&gt;</span>s3<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> cnt1<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>cnt2<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>cnt3<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>s1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>s2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>cnt1<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>s3<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>s2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>cnt2<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>s1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>s3<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>cnt3<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> mx<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>cnt1<span class="token punctuation">,</span><span class="token function">max</span><span class="token punctuation">(</span>cnt2<span class="token punctuation">,</span>cnt3<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>n<span class="token operator">-</span>mx<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ios<span class="token double-colon punctuation">::</span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cout<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> T<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>T<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>T<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>刷题集</category>
+      </categories>
+      <tags>
+        <tag>公式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构模板</title>
     <url>/2024/082034656.html</url>
     <content><![CDATA[<h1 id="1-线段树模板"><a href="#1-线段树模板" class="headerlink" title="1.线段树模板"></a>1.线段树模板</h1><h2 id="1-3模板"><a href="#1-3模板" class="headerlink" title="1.3模板"></a>1.3模板</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
@@ -385,27 +406,6 @@ ll <span class="token function">get</span><span class="token punctuation">(</spa
       </categories>
       <tags>
         <tag>模板</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数学建模课堂笔记1</title>
-    <url>/2024/082862472.html</url>
-    <content><![CDATA[<h1 id="1-可以参加的比赛"><a href="#1-可以参加的比赛" class="headerlink" title="1.可以参加的比赛"></a>1.可以参加的比赛</h1><p>大湾区杯、数模美赛、APMCM、华数杯、深圳杯、国赛</p>
-<h1 id="2-常见模型"><a href="#2-常见模型" class="headerlink" title="2.常见模型"></a>2.常见模型</h1><p>优化问题：数学规划，动态规划，模拟退火，遗传算法</p>
-<p>预测问题：回归分析，马尔可夫预测，灰色预测，时间序列预测，神经网络预测</p>
-<p>评价问题：灰色关联分析，层次分析，主成分分析法</p>
-<p>统计分析：聚类算法，回归分析，关联分析，方差分析，决策树</p>
-<p>图论模型：最小生成树，最短路，旅行商</p>
-<h1 id="3-常用软件"><a href="#3-常用软件" class="headerlink" title="3. 常用软件"></a>3. 常用软件</h1><p>写作：Latex</p>
-<p>数学规划：Python</p>
-<p>数据分析：SPSS，Excel</p>
-<p>画图：Visio，Powerpoint，Matlab，Python</p>
-]]></content>
-      <categories>
-        <category>课堂笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记 数学建模</tag>
       </tags>
   </entry>
 </search>
