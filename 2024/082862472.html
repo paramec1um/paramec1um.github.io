@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="All-in at the Pre-flop, Paramec1um">
-    <meta name="description" content="2024 牛客多校 10 H">
+    <meta name="keywords" content="数学建模课堂笔记1, Paramec1um">
+    <meta name="description" content="数学建模课程笔记1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>All-in at the Pre-flop | Paramec1um</title>
+    <title>数学建模课堂笔记1 | Paramec1um</title>
     <link rel="icon" type="image/png" href="/favicon1.png">
     
     <style>
@@ -292,7 +292,7 @@
                     
                         <script>
                             var typedObj = new Typed("#post-title", {
-                                strings: [ 'All-in at the Pre-flop' ],
+                                strings: [ '数学建模课堂笔记1' ],
                                 startDelay: 100,
                                 typeSpeed: 100,
                                 loop: false,
@@ -324,8 +324,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                                <span class="chip bg-color">数学</span>
+                            <a href="/tags/%E7%AC%94%E8%AE%B0-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+                                <span class="chip bg-color">笔记 数学建模</span>
                             </a>
                         
                     </div>
@@ -336,8 +336,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
-                                刷题集
+                            <a href="/categories/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" class="post-category">
+                                课堂笔记
                             </a>
                         
                     </div>
@@ -349,7 +349,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-08-20
+                    2024-08-28
                 </div>
                 
 
@@ -363,7 +363,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    333
+                    163
                 </div>
                 
 
@@ -388,46 +388,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="All-in-at-the-Pre-flop"><a href="#All-in-at-the-Pre-flop" class="headerlink" title="All-in at the Pre-flop"></a>All-in at the Pre-flop</h1><p>2024 牛客多校(10) H<br><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/81605/H">https://ac.nowcoder.com/acm/contest/81605/H</a></p>
-<hr>
-<h2 id="题型分析"><a href="#题型分析" class="headerlink" title="题型分析"></a>题型分析</h2><p>线性概率模型</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个简化版的赌局中， $A，B$ 两个选手遵循如下规则进行比赛</p>
-<ol>
-<li>初始它们各有数量为 $a,b$ 的筹码</li>
-<li>每次开局之前，必须全押</li>
-<li>开始后每个人有 $\frac{1}{2}$ 的概率获胜，获胜的一方获得另一方的筹码中，与自己相同数量的筹码。</li>
-<li>当一个人没有筹码时比赛结束，这个人输了</li>
-</ol>
-<p>问：每个人获胜的概率是多少</p>
-<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p>$1≤a,b&lt;998244353,a+b&lt;998244353$</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>设 $p(x)$ 表示在总筹码为 $n$ 时，拥有筹码 $x$ 的人获胜的概率<br>则</p>
-<ul>
-<li>当 $x&lt;=\frac{n}{2}$ 时,有 $f(x)=\frac{1}{2}f(0)+\frac{1}{2}f(2x)$</li>
-<li>当 $x&gt;\frac{n}{2}$ 时,有 $f(x)=\frac{1}{2}f(n)+\frac{1}{2}f(x-(n-x))$</li>
-</ul>
-<p><img src="/../img/1.png"></p>
-<p><img src="/../img/2.png"></p>
-<p>解得 $f(x)=x/n$</p>
-<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><pre class="line-numbers language-cpp" data-language="cpp"><div class="caption"><span>{.line-numbers}</span></div><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
-<span class="token keyword">const</span> ll mod<span class="token operator">=</span><span class="token number">998244353</span><span class="token punctuation">;</span>
-ll <span class="token function">q_pow</span><span class="token punctuation">(</span>ll a<span class="token punctuation">,</span>ll b<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    ll res<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>b<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span>res<span class="token operator">=</span>res<span class="token operator">*</span>a<span class="token operator">%</span>mod<span class="token punctuation">;</span>
-        a<span class="token operator">=</span>a<span class="token operator">*</span>a<span class="token operator">%</span>mod<span class="token punctuation">;</span>
-        b<span class="token operator">&gt;&gt;=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    ll a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>a<span class="token operator">&gt;&gt;</span>b<span class="token punctuation">;</span>
-    cout<span class="token operator">&lt;&lt;</span>a<span class="token operator">*</span><span class="token function">q_pow</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">,</span>mod<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">%</span>mod<span class="token operator">&lt;&lt;</span><span class="token char">' '</span><span class="token operator">&lt;&lt;</span>b<span class="token operator">*</span><span class="token function">q_pow</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">,</span>mod<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">%</span>mod<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><p>$ O(1) $</p>
+                <h1 id="1-可以参加的比赛"><a href="#1-可以参加的比赛" class="headerlink" title="1.可以参加的比赛"></a>1.可以参加的比赛</h1><p>大湾区杯、数模美赛、APMCM、华数杯、深圳杯、国赛</p>
+<h1 id="2-常见模型"><a href="#2-常见模型" class="headerlink" title="2.常见模型"></a>2.常见模型</h1><p>优化问题：数学规划，动态规划，模拟退火，遗传算法</p>
+<p>预测问题：回归分析，马尔可夫预测，灰色预测，时间序列预测，神经网络预测</p>
+<p>评价问题：灰色关联分析，层次分析，主成分分析法</p>
+<p>统计分析：聚类算法，回归分析，关联分析，方差分析，决策树</p>
+<p>图论模型：最小生成树，最短路，旅行商</p>
+<h1 id="3-常用软件"><a href="#3-常用软件" class="headerlink" title="3. 常用软件"></a>3. 常用软件</h1><p>写作：Latex</p>
+<p>数学规划：Python</p>
+<p>数据分析：SPSS，Excel</p>
+<p>画图：Visio，Powerpoint，Matlab，Python</p>
 
                 
             </div>
@@ -454,7 +424,7 @@ ll <span class="token function">q_pow</span><span class="token punctuation">(</s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://paramec1um.github.io/2024/082029649.html">https://paramec1um.github.io/2024/082029649.html</a>
+                    <a href="https://paramec1um.github.io/2024/082862472.html">https://paramec1um.github.io/2024/082862472.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -492,8 +462,8 @@ ll <span class="token function">q_pow</span><span class="token punctuation">(</s
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                                    <span class="chip bg-color">数学</span>
+                                <a href="/tags/%E7%AC%94%E8%AE%B0-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+                                    <span class="chip bg-color">笔记 数学建模</span>
                                 </a>
                             
                         </div>
@@ -845,9 +815,10 @@ ll <span class="token function">q_pow</span><span class="token punctuation">(</s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/082862472.html">
                     <div class="card-image">
@@ -864,9 +835,9 @@ ll <span class="token function">q_pow</span><span class="token punctuation">(</s
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -879,6 +850,7 @@ ll <span class="token function">q_pow</span><span class="token punctuation">(</s
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -897,18 +869,18 @@ ll <span class="token function">q_pow</span><span class="token punctuation">(</s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/082050897.html">
+                <a href="/2024/082029649.html">
                     <div class="card-image">
                         
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="计算几何模板">
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="All-in at the Pre-flop">
                         
-                        <span class="card-title">计算几何模板</span>
+                        <span class="card-title">All-in at the Pre-flop</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算几何算法模板
+                            2024 牛客多校 10 H
                         
                     </div>
                     <div class="publish-info">
@@ -919,8 +891,8 @@ ll <span class="token function">q_pow</span><span class="token punctuation">(</s
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%A8%A1%E6%9D%BF/" class="post-category">
-                                    模板
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
+                                    刷题集
                                 </a>
                             
                             
@@ -930,8 +902,8 @@ ll <span class="token function">q_pow</span><span class="token punctuation">(</s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A8%A1%E6%9D%BF-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">
-                        <span class="chip bg-color">模板 计算几何</span>
+                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">数学</span>
                     </a>
                     
                 </div>
