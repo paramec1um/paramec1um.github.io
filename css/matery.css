@@ -33,18 +33,13 @@
     }
 }
 
-
 body {
-    
-    background-repeat: repeat;      /*no-repeat: 不重复铺*/       
-    background-size: 100% 100%;     /*等比例铺满屏幕*/ 
-    background-attachment: fixed;   /*不随屏幕滚动而滚动*/
+    background-color: #eaeaea;
     margin: 0;
-    color: #ececec;                  /*字体颜色*/
+    color: #34495e;
     overflow-x: hidden;
     overflow-y: auto;
 }
-
 
 h1 {
     margin: 48px 0 22px -5px;
@@ -92,90 +87,49 @@ p {
     line-height: 1.5rem;
 }
 
-/*直达评论按钮样式*/
-.comment-scroll {
-    position: fixed;
-    right: 15px;
-    bottom: 135px;
-    padding-top: 15px;
-    margin-bottom: 0;
-    z-index: 998;
-}
-
-/*直达评论按钮样式*/
-.comment-scroll .btn-floating {
-    background: linear-gradient(to bottom right, #FF9999 0%, #ff6666 100%);
-    width: 48px;
-    height: 48px;
-}
-
-/*直达评论按钮样式*/
-.comment-scroll .btn-floating i {
-    line-height: 48px;
-    font-size: 1.8rem;
-}
-
-
-/* 滚动条 */
-::-webkit-scrollbar-thumb {
-    background-color: rgba(255,193,187,1);
-    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
-    border-radius: 3em;
-}
-::-webkit-scrollbar-track {
-    background-color: rgba(119,152,250,0.5);
-    border-radius: 3em;
-}
-::-webkit-scrollbar {
-    width: 8px;
-    height: 15px;
-}
-
-/*文章分割线的颜色*/
 hr {
     margin: 20px 0;
     border: 0;
-    border-top: 1px solid rgba(255,193,187,1);
+    border-top: 1px solid #ccc;
 }
 
-
 blockquote {
-    border-left: 5px solid rgba(255,183,197,1);
+    border-left: 5px solid #42b983;
     padding: 1rem 0.8rem 0.2rem 0.8rem;
-    color: rgba(255,183,197,1);
-    background-color: rgba(66, 94, 185, 0.1);
+    color: #666;
+    background-color: rgba(66, 185, 131, .1);
 }
 
 pre {
-    padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
-    margin: 1rem 0 !important;
-    background: #272822; /*???*/
-    overflow: auto;
+    padding: 2rem 1rem 1rem 1rem !important;
     border-radius: 0.35rem;
     tab-size: 4;
 }
+
 .code-area::after {
-    content: "";
+    content: " ";
     position: absolute;
     border-radius: 50%;
-    background: rgba(255,193,187,1);
+    background: #ff5f56;
     width: 12px;
     height: 12px;
     top: 0;
     left: 12px;
     margin-top: 12px;
+    -webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
+    box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
 }
 
-/*单行代码块颜色*/
 code {
     padding: 1px 5px;
     top: 13px !important;
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
     font-size: 0.91rem;
     color: #e96900;
-    background-color: #000000;
+    background-color: #f8f8f8;
     border-radius: 2px;
 }
+
 .code_copy {
     position: absolute;
     top: 0.7rem;
@@ -184,6 +138,7 @@ code {
     filter: invert(50%);
     cursor: pointer;
 }
+
 .codecopy_notice {
     position: absolute;
     top: 0.7rem;
@@ -192,13 +147,14 @@ code {
     filter: invert(50%);
     opacity: 0;
 }
+
 .code_lang {
     position: absolute;
     top: 1.2rem;
     right: 46px;
     line-height: 0;
     font-weight: bold;
-    font-family: normal;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     z-index: 1;
     filter: invert(50%);
     cursor: pointer;
@@ -207,7 +163,7 @@ code {
 .code-expand {
     position: absolute;
     top: 4px;
-    right: 0px;
+    right: 0;
     filter: invert(50%);
     padding: 7px;
     z-index: 999 !important;
@@ -222,7 +178,7 @@ code {
 }
 
 .code-closed pre::before {
-    height: 0px;
+    height: 0;
 }
 
 pre code {
@@ -231,33 +187,7 @@ pre code {
     background-color: #272822;
 }
 
-pre[class*="language-"] {
-    padding: 1.2em;
-    margin: .5em 0;
-}
-
-code[class*="language-"],
-pre[class*="language-"] {
-    color: #e8eaf6;
-    white-space: pre-wrap !important;
-}
-
-.line-numbers-rows {
-    border-right-width: 0px !important;
-}
-
-.line-numbers {
-    padding: 1.5rem 1.5rem 1.5rem 3.2rem !important;
-    margin: 1rem 0 !important;
-    background: #272822;
-    overflow: auto;
-    border-radius: 0.35rem;
-    tab-size: 4;
-}
-
-
 /* 键盘 kbd 标签样式 */
-/*???*/
 kbd {
     margin: 0 3px;
     padding: 3px 5px;
@@ -267,8 +197,8 @@ kbd {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 0.9rem;
     font-weight: 600;
-    background-color: #f21010;
-    color: #5e3434;
+    background-color: #f8f8f8;
+    color: #34495e;
     line-height: 1.8rem;
     white-space: nowrap;
 }
@@ -290,28 +220,14 @@ cite {
     font-style: normal;
 }
 
-/*???*/
 mark {
-    background-color: #07ec1a;
+    background-color: #fcf8e3;
     padding: .2em;
 }
 
-/*toc样式*/
-.toc-widget {
-    width: 345px;
-    padding-left: 20px;
-    background-color: #3b414b !important;
-    border-radius: 10px;
-    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
-}
-
-
-
 .card {
     border-radius: 10px;
-    background-color: #3b414b;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
-    opacity: 0.95;
 }
 
 .card .card-image img {
@@ -324,23 +240,17 @@ mark {
     margin-bottom: 0;
 }
 
-/*导航栏演示 */
 .bg-color {
-    background-image: linear-gradient(to right, rgba(119, 152, 250, 0.5), rgba(255, 183, 197,1));
-    
-    opacity: 0.8;
+    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
 }
 
-/*???*/
 .text-color {
-    color: #fff !important;
+    color: #0f9d58 !important;
 }
 
-/*???*/
 .white-color {
     color: #fff;
 }
-
 
 .progress-bar {
     height: 4px;
@@ -348,7 +258,6 @@ mark {
     bottom: 0;
     z-index: 300;
     background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
-    /*background-image: linear-gradient(to right, rgba(255, 0, 136, 0.5), rgba(30, 0, 255, 0));*/
     opacity: 0.8;
 }
 
@@ -370,7 +279,6 @@ nav {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-/*首页的背景*/
 header .nav-transparent {
     background-color: transparent !important;
     background-image: none;
@@ -422,27 +330,24 @@ header .side-nav .mobile-head .logo-desc {
     padding-bottom: 10px;
     font-size: 0.8rem;
     line-height: 1.3rem;
-    
+    color: #e3e3e3;
 }
 
 header .side-nav .menu-list li {
     padding: 0;
     margin-left: -15px;
-
 }
 
-/*???*/
 header .side-nav .menu-list a {
     height: 50px;
     line-height: 50px;
-    color: #067bf1 !important;
+    color: #34495e !important;
 }
 
-/*???*/
 .mobile-menu-list a i {
     margin-left: 8px !important;
     font-size: 1.16rem;
-    color: #047af1 !important;
+    color: #34495e !important;
 }
 
 header .side-nav .fa-fw {
@@ -468,24 +373,22 @@ header .side-nav .social-link {
     text-align: center;
 }
 
-/*开始阅读按钮的颜色*/
 .cover-btns a {
     margin: 10px 15px;
     padding: 0 35px;
     height: 45px;
     line-height: 45px;
     font-size: 1rem;
-    color: #ffffff;
-    border: 1px solid #ffffff;
+    color: #fff;
+    border: 1px solid #fff;
     background-color: transparent;
     border-radius: 30px;
     box-shadow: none;
 }
 
-/*点击之后的颜色*/
 .cover-btns a:hover {
-    border: 1px solid rgba(255,183,197,0.7);
-    background-color: rgba(255,183,197,0.7);
+    border: 1px solid #f44336;
+    background-color: #f44336;
     box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42),
     0 4px 23px 0 rgba(0, 0, 0, 0.12),
     0 8px 10px -5px rgba(233, 30, 99, 0.2);
@@ -496,7 +399,6 @@ header .side-nav .social-link {
     padding-right: 5px;
 }
 
-/*???*/
 .scroll-down {
     background: #333;
     margin: 100px auto;
@@ -605,12 +507,10 @@ header .side-nav .social-link {
     text-align: center;
 }
 
-
-/*社交按钮的颜色*/
 .cover-social-link a {
     padding: 0 15px;
     font-size: 1.35rem;
-    color: #ffffff;
+    color: #fff;
 }
 
 header .go-back {
@@ -638,15 +538,12 @@ header .go-back i {
     border: 0;
     overflow: hidden;
     background-position: center center;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-size: cover;
     transform: translate3d(0px, 0px, 0px);
 }
 
-/*???*/
 .index-cover {
     height: 100vh;
-    color: rgba(255,183,197,1);
 }
 
 .post-cover {
@@ -672,127 +569,125 @@ header .go-back i {
 
 .bg-cover .container {
     position: relative;
-    color: #ffffff;
+    color: #fff;
     z-index: 2;
 }
 
-/*title字体颜色*/
 .bg-cover .title {
     font-size: 4rem;
     line-height: 1.2em;
     margin-bottom: 20px;
     position: relative;
-    color:  #ffffff;
 }
 
-/*描述的字体颜色*/
 .bg-cover .description {
-    font-weight: 400;
-    font-size: 1.5rem;
+    font-weight: 300;
+    font-size: 1.25rem;
     line-height: 1.4em;
-    color: #ffffff;
+    color: #eee;
 }
 
-/*文章标题字体*/
 .bg-cover .post-title {
     margin: 0 auto;
-    font-size: 4rem;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+    font-weight: 400;
 }
 
-/*动态背景色*/
+/*首页蒙皮颜色*/
+/*
 @-webkit-keyframes rainbow {
-    
+
     0%,
     100% {
-        background:rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(156, 39, 176, 0.75);
+        background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
     }
 
     16% {
-        background: rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(132, 13, 121, 0.75);
+        background: linear-gradient(45deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
     }
 
     32% {
-        background: rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(239, 83, 80, 0.75);
+        background: linear-gradient(45deg, rgba(239, 83, 80, 0.75) 0%, rgba(239, 83, 80, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(239, 83, 80, 0.75) 0%, rgba(239, 83, 80, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(239, 83, 80, 0.75) 0%, rgba(239, 83, 80, 0.65) 100%);
     }
 
     48% {
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(255, 87, 34, 0.75);
+        background: linear-gradient(45deg, rgba(255, 87, 34, 0.75) 0%, rgba(255, 87, 34, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(255, 87, 34, 0.75) 0%, rgba(255, 87, 34, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(255, 87, 34, 0.75) 0%, rgba(255, 87, 34, 0.65) 100%);
     }
 
     64% {
-        background: rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(255, 160, 0, 0.75);
+        background: linear-gradient(45deg, rgba(255, 160, 0, 0.75) 0%, rgba(255, 160, 0, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(255, 160, 0, 0.75) 0%, rgba(255, 112, 66, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(255, 160, 0, 0.75) 0%, rgba(255, 160, 0, 0.65) 100%);
     }
 
     80% {
-        background: rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(233, 30, 99, 0.75);
+        background: linear-gradient(45deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
     }
 }
+*/
 
-/*动态背景色*/
+/*首页蒙皮颜色*/
+/*
 @keyframes rainbow {
-    
     0%,
     100% {
-        background:rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(156, 39, 176, 0.75);
+        background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
     }
 
     16% {
-        background: rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(132, 13, 121, 0.75);
+        background: linear-gradient(45deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(132, 13, 121, 0.75) 0%, rgba(132, 13, 121, 0.65) 100%);
     }
 
     32% {
-        background: rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(239, 83, 80, 0.75);
+        background: linear-gradient(45deg, rgba(239, 83, 80, 0.75) 0%, rgba(239, 83, 80, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(239, 83, 80, 0.75) 0%, rgba(239, 83, 80, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(239, 83, 80, 0.75) 0%, rgba(239, 83, 80, 0.65) 100%);
     }
 
     48% {
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(255, 87, 34, 0.75);
+        background: linear-gradient(45deg, rgba(255, 87, 34, 0.75) 0%, rgba(255, 87, 34, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(255, 87, 34, 0.75) 0%, rgba(255, 87, 34, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(255, 87, 34, 0.75) 0%, rgba(255, 87, 34, 0.65) 100%);
     }
 
     64% {
-        background: rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(255, 160, 0, 0.75);
+        background: linear-gradient(45deg, rgba(255, 160, 0, 0.75) 0%, rgba(255, 160, 0, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(255, 160, 0, 0.75) 0%, rgba(255, 112, 66, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(255, 160, 0, 0.75) 0%, rgba(255, 160, 0, 0.65) 100%);
     }
 
     80% {
-        background: rgba(255, 183, 197,0.75);
-        background: linear-gradient(45deg,rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -moz-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(119, 152, 250, 0.65), rgba(255, 183, 197,0.75) 100%);
+        background: rgba(233, 30, 99, 0.75);
+        background: linear-gradient(45deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
     }
+    */
 }
 
 .index-card {
@@ -888,7 +783,6 @@ header .go-back i {
     border-radius: 10px;
 }
 
-/**/
 .recommend .post-card {
     position: relative;
     width: 100%;
@@ -978,17 +872,15 @@ header .go-back i {
     margin-bottom: 10px;
 }
 
-/*文章卡片上的分类按钮颜色*/
 article a {
     margin-right: 0 !important;
-    color: #ececec;
+    color: #525f7f;
     text-transform: none !important;
 }
 
-/*文章卡片上的分类按钮点击颜色*/
 article a:hover {
     font-weight: bold;
-    color: rgba(255,183,197,1);/**/
+    color: #42b983;
     text-decoration: underline;
 }
 
@@ -1049,14 +941,13 @@ article .card .card-action {
     border-radius: 0 0 8px 8px !important;
 }
 
-/*文章卡片下方标签内字体的颜色*/
 article .article-tags .chip {
     margin: 2px;
     font-size: 0.8rem;
     font-weight: 400;
     height: 22px;
     line-height: 22px;
-    color: #3b414b;/*黑色*/
+    color: #fff;
     border-radius: 10px;
 }
 
@@ -1064,7 +955,6 @@ article .article-tags .chip {
     margin-left: -0.75rem;
 }
 
-/*文章内容底部的推荐，“下一篇”与“本篇”的背景色*/
 .prev-next .article-badge {
     min-width: 3rem;
     margin-top: 7px;
@@ -1075,8 +965,7 @@ article .article-tags .chip {
     position: absolute;
     box-sizing: border-box;
     z-index: 200;
-    color:#00ff00;/*绿色*/
-    background-color: #3b414b;/*黑色*/
+    background-color: #fff;
     font-weight: 500;
 }
 
@@ -1100,7 +989,7 @@ article .article-tags .chip {
 
 .paging .page-info {
     font-size: 1.4rem;
-    color: #00ff00;
+    color: #888;
     padding-top: 1rem;
 }
 
@@ -1109,11 +998,11 @@ article .article-tags .chip {
 }
 
 .paging .disabled {
-    background-color: #00ff00 !important;
+    background-color: #ccc !important;
 }
 
 .paging .disabled i {
-    color: #00ff00 !important;
+    color: #999 !important;
 }
 
 /*文章详情样式*/
@@ -1174,7 +1063,7 @@ article .article-tags .chip {
     border-radius: 15px;
     margin-right: 5px;
     margin-bottom: 2px;
-    color: rgba(255,183,197,1);/**/
+    color: #42b983;
     background: #fff;
     border: 1px solid;
     transition: all 0.6s ease-in-out;
@@ -1182,17 +1071,17 @@ article .article-tags .chip {
 
 #artDetail .tag_share .article-tag .chip:hover {
     color: #fff;
-    background: rgba(255,183,197,1);/**/
+    background: #42b983;
 }
 
 #artDetail .post-cate {
     float: right;
-    color: rgba(255,183,197,1);/**/
+    color: #42b983;
 }
 
 #artDetail .post-cate a {
     padding-right: 5px;
-    color: rgba(255,183,197,1);/**/
+    color: #42b983;
     font-weight: 500;
 }
 
@@ -1200,25 +1089,23 @@ article .article-tags .chip {
     text-decoration: underline;
 }
 
-/*文章分割线上方阅读人数的字体颜色*/
 #artDetail .post-info {
-    color: rgba(255,183,197,1);
+    color: #525f7f;
 }
 
 #artDetail .post-info .post-category {
     padding-right: 4px;
-    color: #00ff00;
+    color: #525f7f;
 }
 
 #artDetail .post-info .post-category:hover {
     font-weight: bold;
-    color: rgba(255,183,197,1);/**/
+    color: #42b983;
     text-decoration: underline;
 }
 
-/*文章分割线上方阅读人数的日期颜色*/
 #artDetail .post-info .post-date {
-    color: rgba(255,183,197,1);
+    color: #525f7f;
 }
 
 #artDetail .post-info .post-word-count {
@@ -1227,7 +1114,7 @@ article .article-tags .chip {
 
 #artDetail .post-info .post-read {
     margin-left: 15px;
-    color: #00ff00;/*绿色*/
+    color: #525f7f;
 }
 
 #artDetail .article-card-content {
@@ -1276,7 +1163,7 @@ article .article-tags .chip {
 
 #artDetail .reprint a {
     font-size: 1.05rem;
-    color: rgba(255,183,197,1);/*粉色*/
+    color: #42b983;
     font-weight: 500;
 }
 
@@ -1290,10 +1177,9 @@ article .article-tags .chip {
     text-indent: 0.2rem;
 }
 
-/*链接颜色*/
 #articleContent a {
     padding: 0 2px;
-    color: rgba(255,183,197,1);/*粉色*/
+    color: #42b983;
     font-weight: 500;
     text-decoration: underline;
     word-wrap: break-word;
@@ -1434,10 +1320,9 @@ thead {
     z-index: 0;
 }
 
-/*鼠标移动到图标上的变色效果*/
 .chip-container .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #4f30bf 0%, #3a0f9d 100%) !important;
+    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
 }
 
 .chip .tag-length {
@@ -1505,8 +1390,6 @@ thead {
     margin-bottom: 2rem;
 }
 
-
-/*归档-时间线设置*/
 #cd-timeline::before {
     /* this is the vertical line */
     content: '';
@@ -1515,7 +1398,7 @@ thead {
     left: 18px;
     height: 100%;
     width: 4px;
-    background: #0f9d2b;
+    background: #0f9d58;
 }
 
 @media only screen and (min-width: 900px) {
@@ -1730,7 +1613,7 @@ thead {
 }
 
 .post-statis .statis .count a {
-    color: #cf419d;
+    color: #42b983;
 }
 
 .post-statis .statis .name {
@@ -1738,14 +1621,11 @@ thead {
     color: #777;
 }
 
-/*关于*/
-
 #aboutme .social-link {
     margin: 0.5rem 0;
     text-align: center;
 }
 
-/*关于界面的社交按钮颜色*/
 #aboutme .social-link a {
     display: inline-block;
     width: 2.3rem;
@@ -1754,8 +1634,8 @@ thead {
     margin: 0 0.5rem;
     padding: 0;
     color: #fff;
-    border: 1px solid rgba(255,183,197,1);
-    background: radial-gradient(rgba(255,183,197,1), rgb(255, 159, 179,1));
+    border: 1px solid #0f9d58;
+    background: radial-gradient(#4cbf30, #0f9d58);
     font-size: 0.9rem;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
@@ -1931,8 +1811,8 @@ thead {
 
 .other-skills .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #bf30b8 0%, #d113ab 100%);
-    border: 1px solid #bf307a;
+    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    border: 1px solid #4cbf30;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .25)
 }
 
@@ -1990,20 +1870,15 @@ footer .copy-right {
     margin: -15px 0 10px 10px;
 }
 
-p.search-result-summary{
-    margin: 15px 0 0 -8px;
-}
-
 #searchResult .search-result-list {
     margin-left: -8px;
-    margin-top: 0px;
     padding-left: 0;
     color: #666;
 }
 
 .search-result-list .search-result-title {
     font-size: 1.4rem;
-    color: #5642b9;
+    color: #42b983;
 }
 
 .search-result-list li {
@@ -2267,155 +2142,4 @@ p.search-result-summary{
     height: 50px;
     padding: 0;
     margin: 0;
-}
-
-/* tag button */
-body.DarkMode .theme-btn {
-    background: #222;
-    border: 2px solid #555;
-    border-radius: 2px;
-    color: #ccc !important;
-    display: inline-block;
-    font-size: 0.875em;
-    line-height: 2;
-    padding: 0 5px !important;
-    text-decoration: unset !important;
-    transition: background-color 0.2s ease-in-out;
-}
-body.DarkMode .theme-btn:hover {
-    background: #666;
-    border-color: #666;
-    color: #ccc;
-}
-.theme-btn {
-    background: #fff;
-    border: 2px solid #222;
-    border-radius: 2px;
-    color: #555 !important;
-    display: inline-block;
-    font-size: 0.875em;
-    line-height: 2;
-    padding: 0 5px !important;
-    text-decoration: unset !important;
-    transition: background-color 0.2s ease-in-out;
-}
-.theme-btn:hover {
-    background: #222;
-    border-color: #222;
-    color: #fff;
-}
-.theme-btn + .theme-btn {
-    margin: 0 0 8px 8px;
-}
-.theme-btn .fa-fw {
-    text-align: left;
-    width: 1.285714285714286em;
-}
-/* tag note */
-.post-container .note {
-    border-radius: 0;
-    margin-bottom: 20px;
-    padding: 1em;
-    position: relative;
-    border: 1px solid #eee;
-    border-left-width: 5px;
-}
-.post-container .note summary {
-    cursor: pointer;
-    outline: 0;
-}
-.post-container .note summary p {
-    display: inline;
-}
-.post-container .note h2, .post-container .note h3, .post-container .note h4, .post-container .note h5, .post-container .note h6 {
-    border-bottom: initial;
-    margin: 0;
-    padding-top: 0;
-}
-.post-container .note p:first-child, .post-container .note ul:first-child, .post-container .note ol:first-child, .post-container .note table:first-child, .post-container .note pre:first-child, .post-container .note blockquote:first-child, .post-container .note img:first-child {
-    margin-top: 0;
-}
-.post-container .note p:last-child, .post-container .note ul:last-child, .post-container .note ol:last-child, .post-container .note table:last-child, .post-container .note pre:last-child, .post-container .note blockquote:last-child, .post-container .note img:last-child {
-    margin-bottom: 0;
-}
-.post-container .note:not(.no-icon) {
-    padding-left: 2.5em;
-}
-.post-container .note:not(.no-icon)::before {
-    font-size: 1.5em;
-    left: 0.3em;
-    position: absolute;
-    top: calc(50% - 1em);
-}
-.post-container .note.default {
-    border-left-color: #777;
-}
-.post-container .note.default h2, .post-container .note.default h3, .post-container .note.default h4, .post-container .note.default h5, .post-container .note.default h6 {
-    color: #777;
-}
-.post-container .note.default:not(.no-icon)::before {
-    content:'\f0a9';
-    font-family:'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #777;
-}
-.post-container .note.primary {
-    border-left-color: #6f42c1;
-}
-.post-container .note.primary h2, .post-container .note.primary h3, .post-container .note.primary h4, .post-container .note.primary h5, .post-container .note.primary h6 {
-    color: #6f42c1;
-}
-.post-container .note.primary:not(.no-icon)::before {
-    content:'\f055';
-    font-family:'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #6f42c1;
-}
-.post-container .note.info {
-    border-left-color: #428bca;
-}
-.post-container .note.info h2, .post-container .note.info h3, .post-container .note.info h4, .post-container .note.info h5, .post-container .note.info h6 {
-    color: #428bca;
-}
-.post-container .note.info:not(.no-icon)::before {
-    content:'\f05a';
-    font-family:'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #428bca;
-}
-.post-container .note.success {
-    border-left-color: #b85ca7;/**/
-}
-.post-container .note.success h2, .post-container .note.success h3, .post-container .note.success h4, .post-container .note.success h5, .post-container .note.success h6 {
-    color: #cb3e80;/**/
-}
-.post-container .note.success:not(.no-icon)::before {
-    content:'\f058';
-    font-family:'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #cf4384;/**/
-}
-.post-container .note.warning {
-    border-left-color: #f0ad4e;
-}
-.post-container .note.warning h2, .post-container .note.warning h3, .post-container .note.warning h4, .post-container .note.warning h5, .post-container .note.warning h6 {
-    color: #f0ad4e;
-}
-.post-container .note.warning:not(.no-icon)::before {
-    content:'\f06a';
-    font-family:'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #f0ad4e;
-}
-.post-container .note.danger {
-    border-left-color: #d9534f;
-}
-.post-container .note.danger h2, .post-container .note.danger h3, .post-container .note.danger h4, .post-container .note.danger h5, .post-container .note.danger h6 {
-    color: #d9534f;
-}
-.post-container .note.danger:not(.no-icon)::before {
-    content:'\f056';
-    font-family:'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #d9534f;
 }
