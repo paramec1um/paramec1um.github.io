@@ -6,7 +6,7 @@
   <link href="https://paramec1um.github.io/atom.xml" rel="self"/>
   
   <link href="https://paramec1um.github.io/"/>
-  <updated>2024-08-29T07:29:53.099Z</updated>
+  <updated>2024-08-30T13:19:03.298Z</updated>
   <id>https://paramec1um.github.io/</id>
   
   <author>
@@ -17,11 +17,94 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>排序算法模板</title>
+    <link href="https://paramec1um.github.io/2024/083034636.html"/>
+    <id>https://paramec1um.github.io/2024/083034636.html</id>
+    <published>2024-08-30T08:37:04.000Z</published>
+    <updated>2024-08-30T13:19:03.298Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-归并排序&quot;&gt;&lt;a href=&quot;#1-归并排序&quot; class=&quot;headerlink&quot; title=&quot;1.  归并排序&quot;&gt;&lt;/a&gt;1.  归并排序&lt;/h2&gt;&lt;p&gt;基于分治思想的排序&lt;/p&gt;
+&lt;p&gt;复杂度稳定为 $O(nlogn)$&lt;/p&gt;
+&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+    <category term="排序" scheme="https://paramec1um.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>刷题笔记-计算几何专题</title>
+    <link href="https://paramec1um.github.io/2024/083013698.html"/>
+    <id>https://paramec1um.github.io/2024/083013698.html</id>
+    <published>2024-08-30T07:37:57.000Z</published>
+    <updated>2024-08-30T13:18:26.421Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-几何基本运算&quot;&gt;&lt;a href=&quot;#1-几何基本运算&quot; class=&quot;headerlink&quot; title=&quot;1. 几何基本运算&quot;&gt;&lt;/a&gt;1. 几何基本运算&lt;/h2&gt;&lt;h2 id=&quot;2-凸包&quot;&gt;&lt;a href=&quot;#2-凸包&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="刷题笔记" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="计算几何" scheme="https://paramec1um.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
+    
+    <category term="刷题笔记" scheme="https://paramec1um.github.io/tags/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>刷题笔记-数学专题</title>
+    <link href="https://paramec1um.github.io/2024/08303396.html"/>
+    <id>https://paramec1um.github.io/2024/08303396.html</id>
+    <published>2024-08-30T05:24:15.000Z</published>
+    <updated>2024-08-30T13:43:28.170Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-公式推导&quot;&gt;&lt;a href=&quot;#1-公式推导&quot; class=&quot;headerlink&quot; title=&quot;1.公式推导&quot;&gt;&lt;/a&gt;1.公式推导&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://vjudge.net/problem/HDU-7528&quot;&gt;cats</summary>
+        
+      
+    
+    
+    
+    <category term="刷题笔记" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="刷题笔记" scheme="https://paramec1um.github.io/tags/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数学建模课堂笔记1</title>
     <link href="https://paramec1um.github.io/2024/082862472.html"/>
     <id>https://paramec1um.github.io/2024/082862472.html</id>
     <published>2024-08-28T11:32:52.000Z</published>
-    <updated>2024-08-29T07:29:53.099Z</updated>
+    <updated>2024-08-30T13:21:36.583Z</updated>
     
     
       
@@ -38,7 +121,37 @@
     <category term="课堂笔记" scheme="https://paramec1um.github.io/categories/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="笔记 数学建模" scheme="https://paramec1um.github.io/tags/%E7%AC%94%E8%AE%B0-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    <category term="笔记" scheme="https://paramec1um.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="数学建模" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算几何模板</title>
+    <link href="https://paramec1um.github.io/2024/082050897.html"/>
+    <id>https://paramec1um.github.io/2024/082050897.html</id>
+    <published>2024-08-20T11:05:33.000Z</published>
+    <updated>2024-08-30T13:47:44.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-二维几何基本运算&quot;&gt;&lt;a href=&quot;#1-二维几何基本运算&quot; class=&quot;headerlink&quot; title=&quot;1. 二维几何基本运算&quot;&gt;&lt;/a&gt;1. 二维几何基本运算&lt;/h2&gt;&lt;p&gt;在开始写算法模板前，要定义好相关的结构体&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+    <category term="计算几何" scheme="https://paramec1um.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
     
   </entry>
   
@@ -47,7 +160,7 @@
     <link href="https://paramec1um.github.io/2024/082029649.html"/>
     <id>https://paramec1um.github.io/2024/082029649.html</id>
     <published>2024-08-20T11:05:33.000Z</published>
-    <updated>2024-08-28T11:27:43.355Z</updated>
+    <updated>2024-08-30T13:43:51.954Z</updated>
     
     
       
@@ -68,36 +181,11 @@
   </entry>
   
   <entry>
-    <title>计算几何模板</title>
-    <link href="https://paramec1um.github.io/2024/082050897.html"/>
-    <id>https://paramec1um.github.io/2024/082050897.html</id>
-    <published>2024-08-20T11:05:33.000Z</published>
-    <updated>2024-08-28T11:28:20.557Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-二维几何基本运算&quot;&gt;&lt;a href=&quot;#1-二维几何基本运算&quot; class=&quot;headerlink&quot; title=&quot;1 二维几何基本运算&quot;&gt;&lt;/a&gt;1 二维几何基本运算&lt;/h2&gt;&lt;h3 id=&quot;1-1-定义点与向量&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-    <category term="模板 计算几何" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>数据结构模板</title>
     <link href="https://paramec1um.github.io/2024/082034656.html"/>
     <id>https://paramec1um.github.io/2024/082034656.html</id>
     <published>2024-08-20T07:28:42.000Z</published>
-    <updated>2024-08-24T14:42:32.654Z</updated>
+    <updated>2024-08-30T13:18:52.908Z</updated>
     
     
       
@@ -115,6 +203,8 @@
     
     <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
     
+    <category term="数据结构" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
   </entry>
   
   <entry>
@@ -122,7 +212,7 @@
     <link href="https://paramec1um.github.io/2024/081417424.html"/>
     <id>https://paramec1um.github.io/2024/081417424.html</id>
     <published>2024-08-14T11:29:03.000Z</published>
-    <updated>2024-08-17T14:01:15.769Z</updated>
+    <updated>2024-08-30T05:28:03.991Z</updated>
     
     
       
@@ -130,7 +220,7 @@
         
         
     <summary type="html">&lt;p&gt;2024 杭电多校(8) L&lt;br&gt;&lt;a href=&quot;https://vjudge.net/problem/HDU-7528&quot;&gt;https://vjudge.net/problem/HDU-7528&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;题目大意&quot;&gt;&lt;a</summary>
+&lt;h1 id=&quot;题型描述&quot;&gt;&lt;a</summary>
         
       
     

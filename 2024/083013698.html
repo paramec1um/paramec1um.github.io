@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="cats 的电脑中毒, Paramec1um">
+    <meta name="keywords" content="刷题笔记-计算几何专题, Paramec1um">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>cats 的电脑中毒 | Paramec1um</title>
+    <title>刷题笔记-计算几何专题 | Paramec1um</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -255,7 +255,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">cats 的电脑中毒</h1>
+                    <h1 class="description center-align post-title">刷题笔记-计算几何专题</h1>
                 </div>
             </div>
         </div>
@@ -371,8 +371,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%85%AC%E5%BC%8F/">
-                                <span class="chip bg-color">公式</span>
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">
+                                <span class="chip bg-color">计算几何</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">刷题笔记</span>
                             </a>
                         
                     </div>
@@ -383,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
-                                刷题集
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                刷题笔记
                             </a>
                         
                     </div>
@@ -396,7 +400,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-08-14
+                    2024-08-30
                 </div>
                 
 
@@ -420,54 +424,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>2024 杭电多校(8) L<br><a target="_blank" rel="noopener" href="https://vjudge.net/problem/HDU-7528">https://vjudge.net/problem/HDU-7528</a></p>
-<h1 id="题型描述"><a href="#题型描述" class="headerlink" title="题型描述"></a>题型描述</h1><p>推公式</p>
-<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>定义两个 $01$ 串相邻当且仅当两个字符串只有一个字符不同。现在规定 $01$ 串长度是 $n$ ，在所有的 $2^n$ 个 $01$ 串中给出三个被感染的 $01$ 串，这些 $01$ 串每轮会把相邻的所有字符串感染，问经过多少轮之后，所有的 $01$ 串都被感染。</p>
-<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p>$2&lt;=n&lt;=2\cdot10^5$</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>首先定义两个字符串的距离：<br>由于一个字符串与相邻的字符串只有一个字符不同<br>所以当两个字符串有 $n$ 个字符不同的时候，定义它们距离为 $n$</p>
-<p>显然，每个长度为 $n$ 的字符串都有一个距离为 $n$ 的反串与之对应<br>对于感染的过程。</p>
-<p>不难发现只有一个感染源的时候，以这个感染源开始感染，一直到这个感染源的尽头才能够全部感染，答案显然为 $n$。</p>
-<p>我们任取三个感染源之一 $A$ 作为根，那么其余的感染源都在 $A$ 的感染路径上。</p>
-<p>考虑如何做才能缩短感染的路径，同时保证感染进行完全：</p>
+                <h2 id="1-几何基本运算"><a href="#1-几何基本运算" class="headerlink" title="1. 几何基本运算"></a>1. 几何基本运算</h2><h2 id="2-凸包"><a href="#2-凸包" class="headerlink" title="2. 凸包"></a>2. 凸包</h2><h3 id="2-1-二维凸包"><a href="#2-1-二维凸包" class="headerlink" title="2.1 二维凸包"></a>2.1 二维凸包</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2742">P2742 [USACO5.1] 圈奶牛Fencing the Cows /【模板】二维凸包 - 洛谷</a></p>
+<h2 id="3-旋转卡壳"><a href="#3-旋转卡壳" class="headerlink" title="3.旋转卡壳"></a>3.旋转卡壳</h2><h3 id="3-1-旋转卡壳模板"><a href="#3-1-旋转卡壳模板" class="headerlink" title="3.1 旋转卡壳模板"></a>3.1 旋转卡壳模板</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1452">P1452 【模板】旋转卡壳 [USACO03FALL] Beauty Contest G - 洛谷</a></p>
+<h3 id="3-2-K远点对"><a href="#3-2-K远点对" class="headerlink" title="3.2 K远点对"></a>3.2 K远点对</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4357">P4357 [CQOI2016] K 远点对 - 洛谷 </a></p>
 <ul>
-<li><p>为了确保感染进行完全，其他的感染源必须回到感染起点或者感染终点，之后再掉头感染一遍。</p>
-</li>
-<li><p>回到起点肯定会浪费更多之间，因为起点已经开始感染，所以肯定要去到感染终点，之后掉头向起点的方向感染。</p>
-</li>
+<li>这题不开long long 见祖宗了</li>
 </ul>
-<p>这样就能形成一个相遇问题，减少走完全程需要的步骤。<br>而剩余的两个感染源中，我们选取离 $A$ 最远的感染源，记录距离为 $k$<br>则答案显然为  $floor(\frac{n+(n-k)}{2})$</p>
-<p>推导到这里发现答案只与 $k$ 有关<br>而由于 $A$ 是任取的，所以实际上的 $k$ 应为三个感染源两两之间距离的最大值。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> maxn<span class="token operator">=</span><span class="token number">1e5</span><span class="token operator">+</span><span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> ll mod<span class="token operator">=</span><span class="token number">1e9</span><span class="token operator">+</span><span class="token number">7</span><span class="token punctuation">;</span>
-
-<span class="token keyword">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
-    string s1<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>s3<span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>s1<span class="token operator">&gt;&gt;</span>s2<span class="token operator">&gt;&gt;</span>s3<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> cnt1<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>cnt2<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>cnt3<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>s2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>cnt1<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s3<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>s2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>cnt2<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>s3<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>cnt3<span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">int</span> mx<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>cnt1<span class="token punctuation">,</span><span class="token function">max</span><span class="token punctuation">(</span>cnt2<span class="token punctuation">,</span>cnt3<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout<span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>n<span class="token operator">-</span>mx<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    ios<span class="token double-colon punctuation">::</span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cout<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> T<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>T<span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>T<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<h3 id="3-3-最小矩形覆盖"><a href="#3-3-最小矩形覆盖" class="headerlink" title="3.3 最小矩形覆盖"></a>3.3 最小矩形覆盖</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3187">P3187 [HNOI2007] 最小矩形覆盖 - 洛谷</a></p>
+<h3 id="3-4-最小内接四边形"><a href="#3-4-最小内接四边形" class="headerlink" title="3.4 最小内接四边形"></a>3.4 最小内接四边形</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4166">P4166 [SCOI2007] 最大土地面积 - 洛谷</a></p>
+<h2 id="4-半平面交"><a href="#4-半平面交" class="headerlink" title="4.半平面交"></a>4.半平面交</h2><h3 id="4-1-水平可见直线"><a href="#4-1-水平可见直线" class="headerlink" title="4.1 水平可见直线"></a>4.1 水平可见直线</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3194">P3194 [HNOI2008] 水平可见直线 - 洛谷</a></p>
+<h2 id="5-平面最近点对"><a href="#5-平面最近点对" class="headerlink" title="5.平面最近点对"></a>5.平面最近点对</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7883">P7883 平面最近点对（加强加强版） - 洛谷 </a></p>
 
                 
             </div>
@@ -484,7 +450,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">paramec1um</a>
+                    <a href="/about" rel="external nofollow noreferrer">Paramec1um</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -494,7 +460,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://paramec1um.github.io/2024/081417424.html">https://paramec1um.github.io/2024/081417424.html</a>
+                    <a href="https://paramec1um.github.io/2024/083013698.html">https://paramec1um.github.io/2024/083013698.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -507,7 +473,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">paramec1um</a>
+                    <a href="/about" target="_blank">Paramec1um</a>
                     !
                 </span>
             </div>
@@ -532,8 +498,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%85%AC%E5%BC%8F/">
-                                    <span class="chip bg-color">公式</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">
+                                    <span class="chip bg-color">计算几何</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">刷题笔记</span>
                                 </a>
                             
                         </div>
@@ -970,23 +940,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/082034656.html">
+                <a href="/2024/083034636.html">
                     <div class="card-image">
                         
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="数据结构模板">
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="排序算法模板">
                         
-                        <span class="card-title">数据结构模板</span>
+                        <span class="card-title">排序算法模板</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据结构的算法模板
+                            排序算法模板
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-30
                         </span>
                         <span class="publish-author">
                             
@@ -1007,8 +977,8 @@
                         <span class="chip bg-color">模板</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
+                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">排序</span>
                     </a>
                     
                 </div>
@@ -1019,45 +989,48 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/081417424.html">
+                <a href="/2024/08303396.html">
                     <div class="card-image">
                         
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="cats 的电脑中毒">
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="刷题笔记-数学专题">
                         
-                        <span class="card-title">cats 的电脑中毒</span>
+                        <span class="card-title">刷题笔记-数学专题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2024 杭电多校(8) L
+                            数学专题刷题记录
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
-                                    刷题集
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    刷题笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%85%AC%E5%BC%8F/">
-                        <span class="chip bg-color">公式</span>
+                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">刷题笔记</span>
                     </a>
                     
                 </div>

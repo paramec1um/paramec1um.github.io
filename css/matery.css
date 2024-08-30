@@ -240,8 +240,9 @@ mark {
     margin-bottom: 0;
 }
 
+/*主题颜色*/
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #39dada 0%, #098aa1 100%);
 }
 
 .text-color {
@@ -280,7 +281,8 @@ nav {
 }
 
 header .nav-transparent {
-    background-color: transparent !important;
+    /*background-color: transparent !important;*/
+    background-color:linear-gradient(to right, #39dada 0%, #098aa1 100%) !important;
     background-image: none;
     box-shadow: none;
 }
@@ -591,6 +593,20 @@ header .go-back i {
     margin: 0 auto;
     font-size: 2.5rem;
     font-weight: 400;
+}
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+    background-color: #2a98ff;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 2em;
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(139, 227, 237);
+    border-radius: 2em;
+}
+::-webkit-scrollbar {
+    width: 14px;
+    height: 10px;
 }
 
 /*首页蒙皮颜色*/
