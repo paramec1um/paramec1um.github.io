@@ -6,7 +6,7 @@
   <link href="https://paramec1um.github.io/atom.xml" rel="self"/>
   
   <link href="https://paramec1um.github.io/"/>
-  <updated>2024-08-30T13:19:03.298Z</updated>
+  <updated>2024-09-02T08:33:54.206Z</updated>
   <id>https://paramec1um.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://paramec1um.github.io/2024/09020.html"/>
+    <id>https://paramec1um.github.io/2024/09020.html</id>
+    <published>2024-09-02T08:33:54.206Z</published>
+    <updated>2024-09-02T08:33:54.206Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>排序算法模板</title>
@@ -50,7 +63,7 @@
     <link href="https://paramec1um.github.io/2024/083013698.html"/>
     <id>https://paramec1um.github.io/2024/083013698.html</id>
     <published>2024-08-30T07:37:57.000Z</published>
-    <updated>2024-08-30T13:18:26.421Z</updated>
+    <updated>2024-09-02T08:17:28.118Z</updated>
     
     
       
@@ -77,7 +90,7 @@
     <link href="https://paramec1um.github.io/2024/08303396.html"/>
     <id>https://paramec1um.github.io/2024/08303396.html</id>
     <published>2024-08-30T05:24:15.000Z</published>
-    <updated>2024-08-30T13:43:28.170Z</updated>
+    <updated>2024-09-02T08:31:50.265Z</updated>
     
     
       
@@ -175,6 +188,34 @@
     
     <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
     
+    
+    <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数学专题模板</title>
+    <link href="https://paramec1um.github.io/2024/08207817.html"/>
+    <id>https://paramec1um.github.io/2024/08207817.html</id>
+    <published>2024-08-20T07:28:42.000Z</published>
+    <updated>2024-09-02T09:53:48.314Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-基本运算&quot;&gt;&lt;a href=&quot;#1-基本运算&quot; class=&quot;headerlink&quot; title=&quot;1. 基本运算&quot;&gt;&lt;/a&gt;1. 基本运算&lt;/h2&gt;&lt;p&gt;一些常用的数学基本运算&lt;/p&gt;
+&lt;h3 id=&quot;1-1-快速幂-逆元&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
     
     <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     

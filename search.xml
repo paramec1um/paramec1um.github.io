@@ -1,31 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>排序算法模板</title>
-    <url>/2024/083034636.html</url>
-    <content><![CDATA[<h2 id="1-归并排序"><a href="#1-归并排序" class="headerlink" title="1.  归并排序"></a>1.  归并排序</h2><p>基于分治思想的排序</p>
-<p>复杂度稳定为 $O(nlogn)$</p>
-<p> 递归形式：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//a[]为输入的预排序数组，tmp[]为中间数组</span>
-<span class="token comment">//合并区间为[l,r]</span>
-<span class="token keyword">int</span> a<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">,</span>tmp<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">Merge</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span><span class="token keyword">int</span> r<span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token keyword">int</span> mid<span class="token operator">=</span><span class="token punctuation">(</span>l<span class="token operator">+</span>r<span class="token punctuation">)</span><span class="token operator">&gt;&gt;</span><span class="token number">1</span><span class="token punctuation">,</span>i<span class="token operator">=</span>l<span class="token punctuation">,</span>j<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span>l<span class="token punctuation">;</span>k<span class="token operator">&lt;=</span>r<span class="token punctuation">;</span><span class="token operator">++</span>k<span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;=</span>mid<span class="token operator">&amp;&amp;</span><span class="token punctuation">(</span>j<span class="token operator">&gt;</span>r<span class="token operator">||</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>tmp<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-		<span class="token keyword">else</span> tmp<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <title></title>
+    <url>/2024/09020.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>数学专题模板</title>
+    <url>/2024/08207817.html</url>
+    <content><![CDATA[<h2 id="1-基本运算"><a href="#1-基本运算" class="headerlink" title="1. 基本运算"></a>1. 基本运算</h2><p>一些常用的数学基本运算</p>
+<h3 id="1-1-快速幂-逆元"><a href="#1-1-快速幂-逆元" class="headerlink" title="1.1 快速幂&amp;逆元"></a>1.1 快速幂&amp;逆元</h3><p>时间复杂度：$O(logn)$</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//a^x</span>
+<span class="token keyword">int</span> <span class="token function">q_pow</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> res<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span>res<span class="token operator">=</span>res<span class="token operator">*</span>a<span class="token operator">%</span>mod<span class="token punctuation">;</span>
+        a<span class="token operator">=</span>a<span class="token operator">*</span>a<span class="token operator">%</span>mod<span class="token punctuation">;</span>
+        x<span class="token operator">&gt;&gt;=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token operator">%</span>mod<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>快速幂同时可以用于求逆元，求 $a$ 在 $mod$ 下的逆元：$a’=$ <code>q_pow(a,mod-2)</code></p>
+</blockquote>
+<h3 id="1-2-GCD"><a href="#1-2-GCD" class="headerlink" title="1.2 GCD"></a>1.2 GCD</h3><p>输入两个 $n$ 阶二进制数，有三种常见的GCD写法</p>
+<h4 id="1-2-1-普通GCD"><a href="#1-2-1-普通GCD" class="headerlink" title="1.2.1 普通GCD"></a>1.2.1 普通GCD</h4><p>利用辗转相除：$gcd(a,b)=gcd(b,a % b)$</p>
+<p>时间复杂度：$O(n)$</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>b<span class="token punctuation">)</span><span class="token keyword">return</span> a<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">gcd</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span>a<span class="token operator">%</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="1-2-2-二进制GCD"><a href="#1-2-2-二进制GCD" class="headerlink" title="1.2.2 二进制GCD"></a>1.2.2 二进制GCD</h4><p>利用更相减损术+stein优化</p>
+<p>更相减损术：$gcd(a,b)=gcd(a-b,b)$</p>
+<p>stein优化：若 $a,b$ 都为偶数，则 $gcd(a,b)=2gcd(a/2,b/2)$；若 $a,b$ 中只有一个偶数，设 $a$ 为偶数，则$gcd(a,b)=gcd(a/2,b)$</p>
+<p>时间复杂度：$O(logn)$</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//—__builtin_ctz()计算一个数从末尾开始有几个二进制0，速度比按位枚举快</span>
+<span class="token keyword">int</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> az<span class="token operator">=</span><span class="token function">__builtin_ctz</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span>bz<span class="token operator">=</span><span class="token function">__builtin_ctz</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> z<span class="token operator">=</span><span class="token function">min</span><span class="token punctuation">(</span>az<span class="token punctuation">,</span>bz<span class="token punctuation">)</span><span class="token punctuation">,</span>dif<span class="token punctuation">;</span>
+	b<span class="token operator">&gt;&gt;=</span>bz<span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		a<span class="token operator">&gt;&gt;=</span>az<span class="token punctuation">;</span>
+        dif<span class="token operator">=</span>b<span class="token operator">-</span>a<span class="token punctuation">;</span>
+		az<span class="token operator">=</span><span class="token function">__builtin_ctz</span><span class="token punctuation">(</span>b<span class="token operator">-</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>dif<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span>b<span class="token operator">=</span>a<span class="token punctuation">,</span>a<span class="token operator">=</span>dif<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> a<span class="token operator">=</span><span class="token operator">-</span>dif<span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>l<span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>r<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">void</span> <span class="token function">MergeSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  	<span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span><span class="token comment">//数组长为1不用分解</span>
-  	<span class="token comment">// 分解</span>
-  	<span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>l <span class="token operator">+</span> r<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
-  	<span class="token function">MergeSort</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span> mid<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">MergeSort</span><span class="token punctuation">(</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  	<span class="token comment">// 合并</span>
-  	<span class="token function">Merge</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token keyword">return</span> b<span class="token operator">&lt;&lt;</span>z<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>时间复杂度受到 <code>__builtin_ctz()</code> 的影响，若改变  <code>int</code> 类型为 <code>long long</code> 类型，时间会翻倍</p>
+</blockquote>
+<h2 id="2-组合数"><a href="#2-组合数" class="headerlink" title="2. 组合数"></a>2. 组合数</h2><h3 id="2-1-组合数计算"><a href="#2-1-组合数计算" class="headerlink" title="2.1  组合数计算"></a>2.1  组合数计算</h3><p>组合数预处理</p>
+<p>空间：$O(n^2)$</p>
+<p>利用杨辉三角递推式计算：$C_n^m=C_{n-1}^{m}+C_{n-1}^{m-1}$</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> c<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>i<span class="token punctuation">;</span><span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>j<span class="token punctuation">)</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">(</span>c<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">+</span>c<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">%</span>mod<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>组合数直接计算</p>
+<p>要配合阶乘预处理，空间 $O(n)$</p>
+<p>利用组合数的定义式直接计算：$C_n^m=\frac{n!}{m!\cdot(n-m)!}$</p>
+<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 ]]></content>
       <categories>
@@ -33,7 +80,7 @@
       </categories>
       <tags>
         <tag>模板</tag>
-        <tag>排序</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -119,6 +166,42 @@ ll <span class="token function">get</span><span class="token punctuation">(</spa
       <tags>
         <tag>模板</tag>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序算法模板</title>
+    <url>/2024/083034636.html</url>
+    <content><![CDATA[<h2 id="1-归并排序"><a href="#1-归并排序" class="headerlink" title="1.  归并排序"></a>1.  归并排序</h2><p>基于分治思想的排序</p>
+<p>复杂度稳定为 $O(nlogn)$</p>
+<p> 递归形式：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//a[]为输入的预排序数组，tmp[]为中间数组</span>
+<span class="token comment">//合并区间为[l,r]</span>
+<span class="token keyword">int</span> a<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">,</span>tmp<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">Merge</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span><span class="token keyword">int</span> r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">int</span> mid<span class="token operator">=</span><span class="token punctuation">(</span>l<span class="token operator">+</span>r<span class="token punctuation">)</span><span class="token operator">&gt;&gt;</span><span class="token number">1</span><span class="token punctuation">,</span>i<span class="token operator">=</span>l<span class="token punctuation">,</span>j<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span>l<span class="token punctuation">;</span>k<span class="token operator">&lt;=</span>r<span class="token punctuation">;</span><span class="token operator">++</span>k<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;=</span>mid<span class="token operator">&amp;&amp;</span><span class="token punctuation">(</span>j<span class="token operator">&gt;</span>r<span class="token operator">||</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>tmp<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token keyword">else</span> tmp<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>l<span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>r<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">MergeSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span><span class="token comment">//数组长为1不用分解</span>
+  	<span class="token comment">// 分解</span>
+  	<span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>l <span class="token operator">+</span> r<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  	<span class="token function">MergeSort</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span> mid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">MergeSort</span><span class="token punctuation">(</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  	<span class="token comment">// 合并</span>
+  	<span class="token function">Merge</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>模板</category>
+      </categories>
+      <tags>
+        <tag>模板</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -519,6 +602,21 @@ Point <span class="token function">GetCircle</span><span class="token punctuatio
       </tags>
   </entry>
   <entry>
+    <title>刷题笔记-数学专题</title>
+    <url>/2024/08303396.html</url>
+    <content><![CDATA[<h2 id="1-公式推导"><a href="#1-公式推导" class="headerlink" title="1.公式推导"></a>1.公式推导</h2><p><a href="https://vjudge.net/problem/HDU-7528">cats 的电脑中毒</a></p>
+<h2 id="2-概率与期望"><a href="#2-概率与期望" class="headerlink" title="2.概率与期望"></a>2.概率与期望</h2><h3 id="2-1-递推式求期望公式"><a href="#2-1-递推式求期望公式" class="headerlink" title="2.1 递推式求期望公式"></a>2.1 递推式求期望公式</h3><p><a href="https://ac.nowcoder.com/acm/contest/81605/H">All-in at the Pre-flop</a></p>
+<h2 id="3-组合数"><a href="#3-组合数" class="headerlink" title="3. 组合数"></a>3. 组合数</h2><h3 id="3-1-摆放模型"><a href="#3-1-摆放模型" class="headerlink" title="3.1 摆放模型"></a>3.1 摆放模型</h3><p><a href="https://www.luogu.com.cn/problem/P5520">P5520 [yLOI2019] 青原樱 - 洛谷</a></p>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>刷题笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数学建模课堂笔记1</title>
     <url>/2024/082862472.html</url>
     <content><![CDATA[<h2 id="1-参加比赛"><a href="#1-参加比赛" class="headerlink" title="1.参加比赛"></a>1.参加比赛</h2><p>大湾区杯、数模美赛、APMCM、华数杯、深圳杯、国赛</p>
@@ -541,16 +639,25 @@ Point <span class="token function">GetCircle</span><span class="token punctuatio
       </tags>
   </entry>
   <entry>
-    <title>刷题笔记-数学专题</title>
-    <url>/2024/08303396.html</url>
-    <content><![CDATA[<h2 id="1-公式推导"><a href="#1-公式推导" class="headerlink" title="1.公式推导"></a>1.公式推导</h2><p><a href="https://vjudge.net/problem/HDU-7528">cats 的电脑中毒</a></p>
-<h2 id="2-概率与期望"><a href="#2-概率与期望" class="headerlink" title="2.概率与期望"></a>2.概率与期望</h2><h3 id="2-1-递推式求期望公式"><a href="#2-1-递推式求期望公式" class="headerlink" title="2.1 递推式求期望公式"></a>2.1 递推式求期望公式</h3><p><a href="https://ac.nowcoder.com/acm/contest/81605/H">All-in at the Pre-flop</a></p>
+    <title>刷题笔记-计算几何专题</title>
+    <url>/2024/083013698.html</url>
+    <content><![CDATA[<h2 id="1-几何基本运算"><a href="#1-几何基本运算" class="headerlink" title="1. 几何基本运算"></a>1. 几何基本运算</h2><h2 id="2-凸包"><a href="#2-凸包" class="headerlink" title="2. 凸包"></a>2. 凸包</h2><h3 id="2-1-二维凸包"><a href="#2-1-二维凸包" class="headerlink" title="2.1 二维凸包"></a>2.1 二维凸包</h3><p><a href="https://www.luogu.com.cn/problem/P2742">P2742 [USACO5.1] 圈奶牛Fencing the Cows /【模板】二维凸包 - 洛谷</a></p>
+<h2 id="3-旋转卡壳"><a href="#3-旋转卡壳" class="headerlink" title="3.旋转卡壳"></a>3.旋转卡壳</h2><h3 id="3-1-旋转卡壳模板"><a href="#3-1-旋转卡壳模板" class="headerlink" title="3.1 旋转卡壳模板"></a>3.1 旋转卡壳模板</h3><p><a href="https://www.luogu.com.cn/problem/P1452">P1452 【模板】旋转卡壳 [USACO03FALL] Beauty Contest G - 洛谷</a></p>
+<h3 id="3-2-K远点对"><a href="#3-2-K远点对" class="headerlink" title="3.2 K远点对"></a>3.2 K远点对</h3><p><a href="https://www.luogu.com.cn/problem/P4357">P4357 [CQOI2016] K 远点对 - 洛谷 </a></p>
+<ul>
+<li>这题不开long long 见祖宗了</li>
+</ul>
+<h3 id="3-3-最小矩形覆盖"><a href="#3-3-最小矩形覆盖" class="headerlink" title="3.3 最小矩形覆盖"></a>3.3 最小矩形覆盖</h3><p><a href="https://www.luogu.com.cn/problem/P3187">P3187 [HNOI2007] 最小矩形覆盖 - 洛谷</a></p>
+<h3 id="3-4-最小内接四边形"><a href="#3-4-最小内接四边形" class="headerlink" title="3.4 最小内接四边形"></a>3.4 最小内接四边形</h3><p><a href="https://www.luogu.com.cn/problem/P4166">P4166 [SCOI2007] 最大土地面积 - 洛谷</a></p>
+<h2 id="4-半平面交"><a href="#4-半平面交" class="headerlink" title="4.半平面交"></a>4.半平面交</h2><h3 id="4-1-水平可见直线"><a href="#4-1-水平可见直线" class="headerlink" title="4.1 水平可见直线"></a>4.1 水平可见直线</h3><p><a href="https://www.luogu.com.cn/problem/P3194">P3194 [HNOI2008] 水平可见直线 - 洛谷</a></p>
+<h2 id="5-平面最近点对"><a href="#5-平面最近点对" class="headerlink" title="5.平面最近点对"></a>5.平面最近点对</h2><p><a href="https://www.luogu.com.cn/problem/P7883">P7883 平面最近点对（加强加强版） - 洛谷 </a></p>
+<h2 id="6-随机增量法"><a href="#6-随机增量法" class="headerlink" title="6. 随机增量法"></a>6. 随机增量法</h2><h3 id="6-1-最小圆覆盖"><a href="#6-1-最小圆覆盖" class="headerlink" title="6.1 最小圆覆盖"></a>6.1 最小圆覆盖</h3><p><a href="https://www.luogu.com.cn/problem/P1742">P1742 最小圆覆盖 - 洛谷</a></p>
 ]]></content>
       <categories>
         <category>刷题笔记</category>
       </categories>
       <tags>
-        <tag>数学</tag>
+        <tag>计算几何</tag>
         <tag>刷题笔记</tag>
       </tags>
   </entry>
@@ -611,28 +718,6 @@ Point <span class="token function">GetCircle</span><span class="token punctuatio
       </categories>
       <tags>
         <tag>公式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>刷题笔记-计算几何专题</title>
-    <url>/2024/083013698.html</url>
-    <content><![CDATA[<h2 id="1-几何基本运算"><a href="#1-几何基本运算" class="headerlink" title="1. 几何基本运算"></a>1. 几何基本运算</h2><h2 id="2-凸包"><a href="#2-凸包" class="headerlink" title="2. 凸包"></a>2. 凸包</h2><h3 id="2-1-二维凸包"><a href="#2-1-二维凸包" class="headerlink" title="2.1 二维凸包"></a>2.1 二维凸包</h3><p><a href="https://www.luogu.com.cn/problem/P2742">P2742 [USACO5.1] 圈奶牛Fencing the Cows /【模板】二维凸包 - 洛谷</a></p>
-<h2 id="3-旋转卡壳"><a href="#3-旋转卡壳" class="headerlink" title="3.旋转卡壳"></a>3.旋转卡壳</h2><h3 id="3-1-旋转卡壳模板"><a href="#3-1-旋转卡壳模板" class="headerlink" title="3.1 旋转卡壳模板"></a>3.1 旋转卡壳模板</h3><p><a href="https://www.luogu.com.cn/problem/P1452">P1452 【模板】旋转卡壳 [USACO03FALL] Beauty Contest G - 洛谷</a></p>
-<h3 id="3-2-K远点对"><a href="#3-2-K远点对" class="headerlink" title="3.2 K远点对"></a>3.2 K远点对</h3><p><a href="https://www.luogu.com.cn/problem/P4357">P4357 [CQOI2016] K 远点对 - 洛谷 </a></p>
-<ul>
-<li>这题不开long long 见祖宗了</li>
-</ul>
-<h3 id="3-3-最小矩形覆盖"><a href="#3-3-最小矩形覆盖" class="headerlink" title="3.3 最小矩形覆盖"></a>3.3 最小矩形覆盖</h3><p><a href="https://www.luogu.com.cn/problem/P3187">P3187 [HNOI2007] 最小矩形覆盖 - 洛谷</a></p>
-<h3 id="3-4-最小内接四边形"><a href="#3-4-最小内接四边形" class="headerlink" title="3.4 最小内接四边形"></a>3.4 最小内接四边形</h3><p><a href="https://www.luogu.com.cn/problem/P4166">P4166 [SCOI2007] 最大土地面积 - 洛谷</a></p>
-<h2 id="4-半平面交"><a href="#4-半平面交" class="headerlink" title="4.半平面交"></a>4.半平面交</h2><h3 id="4-1-水平可见直线"><a href="#4-1-水平可见直线" class="headerlink" title="4.1 水平可见直线"></a>4.1 水平可见直线</h3><p><a href="https://www.luogu.com.cn/problem/P3194">P3194 [HNOI2008] 水平可见直线 - 洛谷</a></p>
-<h2 id="5-平面最近点对"><a href="#5-平面最近点对" class="headerlink" title="5.平面最近点对"></a>5.平面最近点对</h2><p><a href="https://www.luogu.com.cn/problem/P7883">P7883 平面最近点对（加强加强版） - 洛谷 </a></p>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>计算几何</tag>
-        <tag>刷题笔记</tag>
       </tags>
   </entry>
   <entry>
