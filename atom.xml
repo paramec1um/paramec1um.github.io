@@ -6,7 +6,7 @@
   <link href="https://paramec1um.github.io/atom.xml" rel="self"/>
   
   <link href="https://paramec1um.github.io/"/>
-  <updated>2024-09-02T08:33:54.206Z</updated>
+  <updated>2024-09-03T10:39:53.742Z</updated>
   <id>https://paramec1um.github.io/</id>
   
   <author>
@@ -18,14 +18,41 @@
   
   <entry>
     <title></title>
-    <link href="https://paramec1um.github.io/2024/09020.html"/>
-    <id>https://paramec1um.github.io/2024/09020.html</id>
-    <published>2024-09-02T08:33:54.206Z</published>
-    <updated>2024-09-02T08:33:54.206Z</updated>
+    <link href="https://paramec1um.github.io/2024/09030.html"/>
+    <id>https://paramec1um.github.io/2024/09030.html</id>
+    <published>2024-09-03T10:39:53.741Z</published>
+    <updated>2024-09-03T10:39:53.742Z</updated>
     
     
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>Power Sum</title>
+    <link href="https://paramec1um.github.io/2024/090316016.html"/>
+    <id>https://paramec1um.github.io/2024/090316016.html</id>
+    <published>2024-09-03T10:39:02.000Z</published>
+    <updated>2024-09-03T10:45:54.106Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Power-Sum&quot;&gt;&lt;a href=&quot;#Power-Sum&quot; class=&quot;headerlink&quot; title=&quot;Power Sum&quot;&gt;&lt;/a&gt;Power Sum&lt;/h1&gt;&lt;h2 id=&quot;题型分析&quot;&gt;&lt;a href=&quot;#题型分析&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="构造" scheme="https://paramec1um.github.io/tags/%E6%9E%84%E9%80%A0/"/>
     
   </entry>
   
@@ -90,7 +117,7 @@
     <link href="https://paramec1um.github.io/2024/08303396.html"/>
     <id>https://paramec1um.github.io/2024/08303396.html</id>
     <published>2024-08-30T05:24:15.000Z</published>
-    <updated>2024-09-02T08:31:50.265Z</updated>
+    <updated>2024-09-03T10:40:31.101Z</updated>
     
     
       
@@ -194,34 +221,6 @@
   </entry>
   
   <entry>
-    <title>数学专题模板</title>
-    <link href="https://paramec1um.github.io/2024/08207817.html"/>
-    <id>https://paramec1um.github.io/2024/08207817.html</id>
-    <published>2024-08-20T07:28:42.000Z</published>
-    <updated>2024-09-02T09:53:48.314Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-基本运算&quot;&gt;&lt;a href=&quot;#1-基本运算&quot; class=&quot;headerlink&quot; title=&quot;1. 基本运算&quot;&gt;&lt;/a&gt;1. 基本运算&lt;/h2&gt;&lt;p&gt;一些常用的数学基本运算&lt;/p&gt;
-&lt;h3 id=&quot;1-1-快速幂-逆元&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
-    <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>数据结构模板</title>
     <link href="https://paramec1um.github.io/2024/082034656.html"/>
     <id>https://paramec1um.github.io/2024/082034656.html</id>
@@ -245,6 +244,34 @@
     <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
     
     <category term="数据结构" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数学专题模板</title>
+    <link href="https://paramec1um.github.io/2024/08207817.html"/>
+    <id>https://paramec1um.github.io/2024/08207817.html</id>
+    <published>2024-08-20T07:28:42.000Z</published>
+    <updated>2024-09-03T10:37:09.895Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-基本运算&quot;&gt;&lt;a href=&quot;#1-基本运算&quot; class=&quot;headerlink&quot; title=&quot;1. 基本运算&quot;&gt;&lt;/a&gt;1. 基本运算&lt;/h2&gt;&lt;p&gt;一些常用的数学基本运算&lt;/p&gt;
+&lt;h3 id=&quot;1-1-快速幂-逆元&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+    <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
