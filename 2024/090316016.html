@@ -424,8 +424,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Power-Sum"><a href="#Power-Sum" class="headerlink" title="Power Sum"></a>Power Sum</h1><h2 id="题型分析"><a href="#题型分析" class="headerlink" title="题型分析"></a>题型分析</h2><p>平方数性质+构造</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><img src="D:\1Blog\source\img\3.png"></p>
+                <h1 id="Power-Sum"><a href="#Power-Sum" class="headerlink" title="Power Sum"></a>Power Sum</h1><p><a target="_blank" rel="noopener" href="https://vjudge.net/contest/652507#problem/F">2021 CCPC 网络预选赛 - F</a></p>
+<hr>
+<h2 id="题型分析"><a href="#题型分析" class="headerlink" title="题型分析"></a>题型分析</h2><p>平方数性质+构造</p>
+<h2 id="题目描述-数据范围"><a href="#题目描述-数据范围" class="headerlink" title="题目描述&amp;数据范围"></a>题目描述&amp;数据范围</h2><p><img src="D:\1Blog\source\img\3.png"></p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>连续 $4$ 个平方数相加减可以得出固定值 $4$ ，即<br>$$<br>i^2-(i-1)^2=2i-1<br>$$</p>
+<p>$$<br>(i-2)^2-(i-3)^2=2i-5<br>$$</p>
+<p>两式相减得<br>$$<br>(i^2-(i-1)^2)-((i-2)^2-(i-3)^2)=4<br>$$<br>而整数 $1,2,3$ 能够通过 <code>"1","0001","01"</code> 最多四位字符串表示</p>
+<p>因此对于整数 $n$ ，可以通过有最多 $n+2$ 个平方数相加减来构成</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">sc</span> <span class="token expression"><span class="token keyword">static</span></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">using</span> ll<span class="token operator">=</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> N<span class="token operator">=</span><span class="token number">1e6</span><span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">;</span>
+string s<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"1001"</span><span class="token punctuation">,</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"0001"</span><span class="token punctuation">,</span><span class="token string">"01"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">int</span> n<span class="token punctuation">;</span>cin<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> mod<span class="token operator">=</span>n<span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> k<span class="token operator">=</span>n<span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">;</span>
+	string ans<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>mod<span class="token punctuation">)</span>ans<span class="token operator">=</span>s<span class="token punctuation">[</span>mod<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>k<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>ans<span class="token operator">+=</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	cout<span class="token operator">&lt;&lt;</span>ans<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span>
+	cout<span class="token operator">&lt;&lt;</span>ans<span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token operator">/</span>ios<span class="token double-colon punctuation">::</span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cout<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> t<span class="token punctuation">;</span>
+	cin<span class="token operator">&gt;&gt;</span>t<span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -932,32 +963,47 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/09030.html">
+                <a href="/2024/09045240.html">
                     <div class="card-image">
                         
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="公平席位分配模型">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
+                        <span class="card-title">公平席位分配模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            公平席位分配模型
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-03
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-04
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Paramec1um
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/" class="post-category">
+                                    数学模型
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%A8%A1/">
+                        <span class="chip bg-color">数模</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%9D%E7%AD%89%E6%A8%A1%E5%9E%8B/">
+                        <span class="chip bg-color">初等模型</span>
+                    </a>
+                    
                 </div>
                 
             </div>

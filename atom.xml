@@ -6,7 +6,7 @@
   <link href="https://paramec1um.github.io/atom.xml" rel="self"/>
   
   <link href="https://paramec1um.github.io/"/>
-  <updated>2024-09-03T10:39:53.742Z</updated>
+  <updated>2024-09-06T10:58:25.575Z</updated>
   <id>https://paramec1um.github.io/</id>
   
   <author>
@@ -17,15 +17,79 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://paramec1um.github.io/2024/09030.html"/>
-    <id>https://paramec1um.github.io/2024/09030.html</id>
-    <published>2024-09-03T10:39:53.741Z</published>
-    <updated>2024-09-03T10:39:53.742Z</updated>
+    <title>Find the Gap</title>
+    <link href="https://paramec1um.github.io/2024/090632192.html"/>
+    <id>https://paramec1um.github.io/2024/090632192.html</id>
+    <published>2024-09-06T09:52:37.000Z</published>
+    <updated>2024-09-06T10:58:25.575Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Find-the-Gap&quot;&gt;&lt;a href=&quot;#Find-the-Gap&quot; class=&quot;headerlink&quot; title=&quot;Find the Gap&quot;&gt;&lt;/a&gt;Find the Gap&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
     
     
     
+    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
     
+    
+    <category term="计算几何" scheme="https://paramec1um.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A. Coprime Array</title>
+    <link href="https://paramec1um.github.io/2024/090545121.html"/>
+    <id>https://paramec1um.github.io/2024/090545121.html</id>
+    <published>2024-09-05T11:14:30.000Z</published>
+    <updated>2024-09-06T10:59:17.161Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;A-Coprime-Array&quot;&gt;&lt;a href=&quot;#A-Coprime-Array&quot; class=&quot;headerlink&quot; title=&quot;A. Coprime Array&quot;&gt;&lt;/a&gt;A. Coprime Array&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>公平席位分配模型</title>
+    <link href="https://paramec1um.github.io/2024/09045240.html"/>
+    <id>https://paramec1um.github.io/2024/09045240.html</id>
+    <published>2024-09-04T09:48:20.000Z</published>
+    <updated>2024-09-06T10:58:25.573Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;公平席位分配模型&quot;&gt;&lt;a href=&quot;#公平席位分配模型&quot; class=&quot;headerlink&quot; title=&quot;公平席位分配模型&quot;&gt;&lt;/a&gt;公平席位分配模型&lt;/h1&gt;&lt;h2 id=&quot;1-问题重述&quot;&gt;&lt;a href=&quot;#1-问题重述&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数学模型" scheme="https://paramec1um.github.io/categories/%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/"/>
+    
+    
+    <category term="数模" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E6%A8%A1/"/>
+    
+    <category term="初等模型" scheme="https://paramec1um.github.io/tags/%E5%88%9D%E7%AD%89%E6%A8%A1%E5%9E%8B/"/>
     
   </entry>
   
@@ -34,14 +98,14 @@
     <link href="https://paramec1um.github.io/2024/090316016.html"/>
     <id>https://paramec1um.github.io/2024/090316016.html</id>
     <published>2024-09-03T10:39:02.000Z</published>
-    <updated>2024-09-03T10:45:54.106Z</updated>
+    <updated>2024-09-04T04:47:40.503Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Power-Sum&quot;&gt;&lt;a href=&quot;#Power-Sum&quot; class=&quot;headerlink&quot; title=&quot;Power Sum&quot;&gt;&lt;/a&gt;Power Sum&lt;/h1&gt;&lt;h2 id=&quot;题型分析&quot;&gt;&lt;a href=&quot;#题型分析&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;Power-Sum&quot;&gt;&lt;a href=&quot;#Power-Sum&quot; class=&quot;headerlink&quot; title=&quot;Power Sum&quot;&gt;&lt;/a&gt;Power Sum&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
         
       
     
@@ -90,14 +154,14 @@
     <link href="https://paramec1um.github.io/2024/083013698.html"/>
     <id>https://paramec1um.github.io/2024/083013698.html</id>
     <published>2024-08-30T07:37:57.000Z</published>
-    <updated>2024-09-02T08:17:28.118Z</updated>
+    <updated>2024-09-06T09:51:24.065Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;1-几何基本运算&quot;&gt;&lt;a href=&quot;#1-几何基本运算&quot; class=&quot;headerlink&quot; title=&quot;1. 几何基本运算&quot;&gt;&lt;/a&gt;1. 几何基本运算&lt;/h2&gt;&lt;h2 id=&quot;2-凸包&quot;&gt;&lt;a href=&quot;#2-凸包&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;1-几何基本运算&quot;&gt;&lt;a href=&quot;#1-几何基本运算&quot; class=&quot;headerlink&quot; title=&quot;1. 几何基本运算&quot;&gt;&lt;/a&gt;1. 几何基本运算&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
         
       
     
@@ -106,9 +170,9 @@
     <category term="刷题笔记" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="计算几何" scheme="https://paramec1um.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
-    
     <category term="刷题笔记" scheme="https://paramec1um.github.io/tags/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="计算几何" scheme="https://paramec1um.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
     
   </entry>
   
@@ -117,7 +181,7 @@
     <link href="https://paramec1um.github.io/2024/08303396.html"/>
     <id>https://paramec1um.github.io/2024/08303396.html</id>
     <published>2024-08-30T05:24:15.000Z</published>
-    <updated>2024-09-03T10:40:31.101Z</updated>
+    <updated>2024-09-04T08:46:39.428Z</updated>
     
     
       
@@ -144,7 +208,7 @@
     <link href="https://paramec1um.github.io/2024/082862472.html"/>
     <id>https://paramec1um.github.io/2024/082862472.html</id>
     <published>2024-08-28T11:32:52.000Z</published>
-    <updated>2024-08-30T13:21:36.583Z</updated>
+    <updated>2024-09-04T09:46:36.064Z</updated>
     
     
       
@@ -172,7 +236,7 @@
     <link href="https://paramec1um.github.io/2024/082050897.html"/>
     <id>https://paramec1um.github.io/2024/082050897.html</id>
     <published>2024-08-20T11:05:33.000Z</published>
-    <updated>2024-09-02T08:02:13.659Z</updated>
+    <updated>2024-09-06T10:06:04.316Z</updated>
     
     
       
@@ -221,6 +285,34 @@
   </entry>
   
   <entry>
+    <title>数学专题模板</title>
+    <link href="https://paramec1um.github.io/2024/08207817.html"/>
+    <id>https://paramec1um.github.io/2024/08207817.html</id>
+    <published>2024-08-20T07:28:42.000Z</published>
+    <updated>2024-09-05T11:50:37.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-基本运算&quot;&gt;&lt;a href=&quot;#1-基本运算&quot; class=&quot;headerlink&quot; title=&quot;1. 基本运算&quot;&gt;&lt;/a&gt;1. 基本运算&lt;/h2&gt;&lt;p&gt;一些常用的数学基本运算&lt;/p&gt;
+&lt;h3 id=&quot;1-1-快速幂-逆元&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+    <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据结构模板</title>
     <link href="https://paramec1um.github.io/2024/082034656.html"/>
     <id>https://paramec1um.github.io/2024/082034656.html</id>
@@ -244,34 +336,6 @@
     <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
     
     <category term="数据结构" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数学专题模板</title>
-    <link href="https://paramec1um.github.io/2024/08207817.html"/>
-    <id>https://paramec1um.github.io/2024/08207817.html</id>
-    <published>2024-08-20T07:28:42.000Z</published>
-    <updated>2024-09-03T10:37:09.895Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-基本运算&quot;&gt;&lt;a href=&quot;#1-基本运算&quot; class=&quot;headerlink&quot; title=&quot;1. 基本运算&quot;&gt;&lt;/a&gt;1. 基本运算&lt;/h2&gt;&lt;p&gt;一些常用的数学基本运算&lt;/p&gt;
-&lt;h3 id=&quot;1-1-快速幂-逆元&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
-    <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
