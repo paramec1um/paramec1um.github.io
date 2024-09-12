@@ -424,8 +424,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-基本运算"><a href="#1-基本运算" class="headerlink" title="1. 基本运算"></a>1. 基本运算</h2><p>一些常用的数学基本运算</p>
-<h3 id="1-1-快速幂-逆元"><a href="#1-1-快速幂-逆元" class="headerlink" title="1.1 快速幂&amp;逆元"></a>1.1 快速幂&amp;逆元</h3><p>时间复杂度：$O(loga)$</p>
+                <h2 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h2><p>一些常用的数学基本运算</p>
+<h3 id="快速幂-逆元"><a href="#快速幂-逆元" class="headerlink" title="快速幂&amp;逆元"></a>快速幂&amp;逆元</h3><p>时间复杂度：$O(loga)$</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//a^x</span>
 <span class="token keyword">int</span> <span class="token function">q_pow</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">int</span> res<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
@@ -440,7 +440,7 @@
 <blockquote>
 <p>快速幂同时可以用于求逆元，求 $a$ 在 $mod$ 下的<strong>逆元</strong>：$a’=$ <code>q_pow(a,mod-2)</code></p>
 </blockquote>
-<h3 id="1-2-阶乘"><a href="#1-2-阶乘" class="headerlink" title="1.2 阶乘"></a>1.2 阶乘</h3><p>阶乘预处理：</p>
+<h3 id="阶乘"><a href="#阶乘" class="headerlink" title="阶乘"></a>阶乘</h3><p>阶乘预处理：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//fac[i]记录i的阶乘</span>
 ll fac<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span>
 <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -450,11 +450,49 @@ ll fac<span class="token punctuation">[</span>maxn<span class="token punctuation
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="2-平方数"><a href="#2-平方数" class="headerlink" title="2.平方数"></a>2.平方数</h2><h3 id="2-1-平方和"><a href="#2-1-平方和" class="headerlink" title="2.1 平方和"></a>2.1 平方和</h3><p>平方和公式：<br>$$<br>S=1^2+2^2+…+n^2=\frac{n(n+1)(2n+1)}{6}<br>$$<br>立方和公式：<br>$$<br>S=1^3+2^3+…+n^3=(\frac{n(n+1)}{2})^2<br>$$</p>
+<h3 id="模整数"><a href="#模整数" class="headerlink" title="模整数"></a>模整数</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">const</span> <span class="token keyword">int</span> mod<span class="token operator">=</span><span class="token number">998244353</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">Mint</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> v<span class="token punctuation">;</span>
+    <span class="token function">Mint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">v</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token function">Mint</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>v<span class="token operator">=</span><span class="token generic-function"><span class="token function">static_cast</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span>mod<span class="token operator">&lt;=</span>x<span class="token operator">&amp;&amp;</span>x<span class="token operator">&lt;</span>mod<span class="token punctuation">)</span><span class="token operator">?</span>x<span class="token operator">:</span>x<span class="token operator">%</span>mod<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span>v<span class="token operator">+=</span>mod<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token keyword">friend</span> Mint <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">const</span> Mint <span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token keyword">const</span> Mint <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>v<span class="token operator">+</span>b<span class="token punctuation">.</span>v<span class="token punctuation">)</span><span class="token operator">%</span>mod<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token keyword">friend</span> Mint <span class="token keyword">operator</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">const</span> Mint <span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token keyword">const</span> Mint <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>v<span class="token operator">-</span>b<span class="token punctuation">.</span>v<span class="token operator">+</span>mod<span class="token punctuation">)</span><span class="token operator">%</span>mod<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token keyword">friend</span> Mint <span class="token keyword">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">const</span> Mint <span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token keyword">const</span> Mint <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token generic-function"><span class="token function">static_cast</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token number">1ll</span> <span class="token operator">*</span> a<span class="token punctuation">.</span>v<span class="token operator">*</span>b<span class="token punctuation">.</span>v<span class="token operator">%</span>mod<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">friend</span> Mint <span class="token keyword">operator</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token keyword">const</span> Mint <span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token keyword">const</span> Mint <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token generic-function"><span class="token function">static_cast</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token number">1ll</span><span class="token operator">*</span>a<span class="token punctuation">.</span>v<span class="token operator">*</span>b<span class="token punctuation">.</span><span class="token function">qpow</span><span class="token punctuation">(</span>mod<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>v<span class="token operator">%</span>mod<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">friend</span> ostream<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>ostream <span class="token operator">&amp;</span>o<span class="token punctuation">,</span><span class="token keyword">const</span> Mint <span class="token operator">&amp;</span>t<span class="token punctuation">)</span><span class="token punctuation">{</span>o<span class="token operator">&lt;&lt;</span>t<span class="token punctuation">.</span>v<span class="token punctuation">;</span><span class="token keyword">return</span> o<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    Mint <span class="token function">qpow</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token keyword">const</span><span class="token punctuation">{</span>
+        <span class="token keyword">long</span> <span class="token keyword">long</span> res<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>a<span class="token operator">=</span>v<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span>res<span class="token operator">=</span>res<span class="token operator">*</span>a<span class="token operator">%</span>mod<span class="token punctuation">;</span>
+            a<span class="token operator">=</span>a<span class="token operator">*</span>a<span class="token operator">%</span>mod<span class="token punctuation">;</span>
+            x<span class="token operator">&gt;&gt;=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token function">Mint</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> ll<span class="token operator">=</span>Mint<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="数论-众数"><a href="#数论-众数" class="headerlink" title="数论-众数"></a>数论-众数</h2><h3 id="摩尔投票算法"><a href="#摩尔投票算法" class="headerlink" title="摩尔投票算法"></a>摩尔投票算法</h3><p>当一个元素出现超过 $n/2$ 时，可以用摩尔投票算法</p>
+<p>时间为 $O(n)$ 空间为 $O(1)$ </p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">int</span> val <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	cin <span class="token operator">&gt;&gt;</span> x<span class="token punctuation">;</span>
+  	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>cnt<span class="token punctuation">)</span> val <span class="token operator">=</span> x<span class="token punctuation">;</span><span class="token comment">//没票换候选</span>
+  	<span class="token punctuation">(</span>val <span class="token operator">==</span> x<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token operator">++</span>cnt <span class="token operator">:</span> <span class="token operator">--</span>cnt<span class="token punctuation">;</span><span class="token comment">//投票</span>
+	<span class="token punctuation">}</span>
+	cout <span class="token operator">&lt;&lt;</span> val<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="数论-平方数"><a href="#数论-平方数" class="headerlink" title="数论-平方数"></a>数论-平方数</h2><h3 id="平方和"><a href="#平方和" class="headerlink" title="平方和"></a>平方和</h3><p>平方和公式：<br>$$<br>S=1^2+2^2+…+n^2=\frac{n(n+1)(2n+1)}{6}<br>$$<br>立方和公式：<br>$$<br>S=1^3+2^3+…+n^3=(\frac{n(n+1)}{2})^2<br>$$</p>
 <blockquote>
 <p>事实上，$k$ 次方和的计算结果可以用 $\frac{n^{k+1}}{k+1}$ 近似</p>
 </blockquote>
-<h3 id="2-2-平方数性质"><a href="#2-2-平方数性质" class="headerlink" title="2.2 平方数性质"></a>2.2 平方数性质</h3><p><strong>定理1：</strong></p>
+<h3 id="平方数性质"><a href="#平方数性质" class="headerlink" title="平方数性质"></a>平方数性质</h3><p><strong>定理1：</strong></p>
 <p>相邻两个平方数之间的差值构成公差为 $2$ 的等差数列，即<br>$$<br>i^2-(i-1)^2=2i-1<br>$$</p>
 <p><strong>定理2：</strong></p>
 <p>连续 $4$ 个平方数相加减可以得出固定值 $4$ ，即<br>$$<br>i^2-(i-1)^2=2i-1<br>$$</p>
@@ -463,7 +501,7 @@ ll fac<span class="token punctuation">[</span>maxn<span class="token punctuation
 <blockquote>
 <p>不知听那位人士说过：遇到平方数先减一减再说…</p>
 </blockquote>
-<h2 id="3-素数"><a href="#3-素数" class="headerlink" title="3. 素数"></a>3. 素数</h2><h3 id="3-1-素数检测"><a href="#3-1-素数检测" class="headerlink" title="3.1 素数检测"></a>3.1 素数检测</h3><h4 id="3-1-1-Miller-Rabin素数测试"><a href="#3-1-1-Miller-Rabin素数测试" class="headerlink" title="3.1.1 Miller Rabin素数测试"></a>3.1.1 Miller Rabin素数测试</h4><p>快速判断一个数是否是素数</p>
+<h2 id="3-数论-素数"><a href="#3-数论-素数" class="headerlink" title="3. 数论-素数"></a>3. 数论-素数</h2><h3 id="3-1-素数检测"><a href="#3-1-素数检测" class="headerlink" title="3.1 素数检测"></a>3.1 素数检测</h3><h4 id="3-1-1-Miller-Rabin素数测试"><a href="#3-1-1-Miller-Rabin素数测试" class="headerlink" title="3.1.1 Miller Rabin素数测试"></a>3.1.1 Miller Rabin素数测试</h4><p>快速判断一个数是否是素数</p>
 <p>时间复杂度：$O(logn)$</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//x为预判断的数</span>
 <span class="token keyword">bool</span> <span class="token function">MillerRabin</span><span class="token punctuation">(</span>ll x<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -550,31 +588,12 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
 <blockquote>
 <p>广义孪生素数猜想认为：任意偶数可以被两个素数之差表示，且这两个素数有无穷多组</p>
 </blockquote>
-<h2 id="4-筛法"><a href="#4-筛法" class="headerlink" title="4. 筛法"></a>4. 筛法</h2><h3 id="4-1-线性筛"><a href="#4-1-线性筛" class="headerlink" title="4.1 线性筛"></a>4.1 线性筛</h3><p>$O(n)$ 时间打出素数表</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span>pri<span class="token punctuation">;</span>
-<span class="token keyword">bool</span> m<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	m<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>maxn<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>pri<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> t<span class="token operator">:</span>pri<span class="token punctuation">)</span><span class="token punctuation">{</span>
-			<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">*</span>t<span class="token operator">&gt;=</span>maxn<span class="token punctuation">)</span><span class="token keyword">break</span><span class="token punctuation">;</span>
-			m<span class="token punctuation">[</span>i<span class="token operator">*</span>t<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//质数的i倍一定是合数，标记</span>
-			<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">%</span>t<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token comment">//若i是某个质数的倍数，那i一定在遍历到这个质数时就被筛掉了</span>
-            <span class="token comment">//所以i乘上后续的其他质数p，等价于k*t*p一定被t的其他倍数筛选，没必要再筛选下去了</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="5-GCD"><a href="#5-GCD" class="headerlink" title="5. GCD"></a>5. GCD</h2><p>输入两个 $n$ 阶二进制数，有三种常见的GCD写法</p>
-<h3 id="5-1-普通GCD"><a href="#5-1-普通GCD" class="headerlink" title="5.1 普通GCD"></a>5.1 普通GCD</h3><p>利用辗转相除：$gcd(a,b)=gcd(b,a % b)$</p>
+<h2 id="4-数论-GCD"><a href="#4-数论-GCD" class="headerlink" title="4. 数论-GCD"></a>4. 数论-GCD</h2><p>输入两个 $n$ 阶二进制数，有三种常见的GCD写法</p>
+<h3 id="4-1-普通GCD"><a href="#4-1-普通GCD" class="headerlink" title="4.1 普通GCD"></a>4.1 普通GCD</h3><p>利用辗转相除：$gcd(a,b)=gcd(b,a % b)$</p>
 <p>时间复杂度：$O(n)$</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token operator">!</span>b<span class="token operator">?</span>a<span class="token operator">:</span><span class="token function">gcd</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span>a<span class="token operator">%</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="5-2-二进制GCD"><a href="#5-2-二进制GCD" class="headerlink" title="5.2 二进制GCD"></a>5.2 二进制GCD</h3><p>利用更相减损术+stein优化</p>
+<h3 id="4-2-二进制GCD"><a href="#4-2-二进制GCD" class="headerlink" title="4.2 二进制GCD"></a>4.2 二进制GCD</h3><p>利用更相减损术+stein优化</p>
 <p>更相减损术：$gcd(a,b)=gcd(a-b,b)$</p>
 <p>stein优化：</p>
 <ul>
@@ -600,7 +619,7 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
 <blockquote>
 <p>时间复杂度受到 <code>__builtin_ctz()</code> 的影响，若改变  <code>int</code> 类型为 <code>long long</code> 类型，时间会翻倍</p>
 </blockquote>
-<h2 id="6-组合数"><a href="#6-组合数" class="headerlink" title="6. 组合数"></a>6. 组合数</h2><h3 id="6-1-组合数计算"><a href="#6-1-组合数计算" class="headerlink" title="6.1  组合数计算"></a>6.1  组合数计算</h3><p>组合数预处理</p>
+<h2 id="5-组合数"><a href="#5-组合数" class="headerlink" title="5. 组合数"></a>5. 组合数</h2><h3 id="5-1-组合数计算"><a href="#5-1-组合数计算" class="headerlink" title="5.1  组合数计算"></a>5.1  组合数计算</h3><p>组合数预处理</p>
 <p>空间：$O(n^2)$</p>
 <p>利用杨辉三角递推式计算：$C_n^m=C_{n-1}^{m}+C_{n-1}^{m-1}$</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> c<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -618,6 +637,41 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
 <p>利用组合数的定义式直接计算：$C_n^m=\frac{n!}{m!\cdot(n-m)!}$</p>
 <p>需要阶乘预处理</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">ll <span class="token function">C</span><span class="token punctuation">(</span>ll n<span class="token punctuation">,</span>ll m<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> fac<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">/</span><span class="token punctuation">(</span>fac<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token operator">*</span>fac<span class="token punctuation">[</span>n<span class="token operator">-</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="概率与期望"><a href="#概率与期望" class="headerlink" title="概率与期望"></a>概率与期望</h2><h3 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h3><h4 id="概率DP"><a href="#概率DP" class="headerlink" title="概率DP"></a>概率DP</h4><p>概率DP的范围就比较广泛了，主要总结一下题型</p>
+<ol>
+<li>数据范围较小的时候可以DP，较大时概率为特定值</li>
+</ol>
+<h3 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h3><h4 id="连续型随机变量期望"><a href="#连续型随机变量期望" class="headerlink" title="连续型随机变量期望"></a>连续型随机变量期望</h4><p>连续型随机变量期望公式：$\int_{-\infty}^{\infty}xf(x)dx$ </p>
+<p>其中 $f(x)$ 为 $x$ 的分布，即取值为 $x$ 时，发生的概率</p>
+<blockquote>
+<p>若发生事件的概率不变，但是值域发生变化，则只要改变积分范围</p>
+<p>这种情况一般在多个目标对同一值域取值时发生，设初始值域为$[0,n]$，则</p>
+<p>$E_i=\int_{0}^{n-\sum_{k=1}^{k=i-1} E_k}xf(x)dx$</p>
+</blockquote>
+<h3 id="分布模型"><a href="#分布模型" class="headerlink" title="分布模型"></a>分布模型</h3><h4 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h4><p>离散概率分布的一种，描述独立实验中，第一次发生某事件所需要的实验次数。</p>
+<p>若事件成功发生一次的概率为 $p$ ，则所需的试验次数期望为 $\frac{1}{p}$</p>
+<blockquote>
+<p>这里的 “成功发生” 可以逆向思考</p>
+<p>如某事件失败一次就会终止，问终止前期望可以成功几次</p>
+<p>只要把 “成功发生” 的概率 $p$ 更换为失败的概率即可</p>
+</blockquote>
+<h2 id="6-筛法"><a href="#6-筛法" class="headerlink" title="6. 筛法"></a>6. 筛法</h2><h3 id="6-1-线性筛"><a href="#6-1-线性筛" class="headerlink" title="6.1 线性筛"></a>6.1 线性筛</h3><p>$O(n)$ 时间打出素数表</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span>pri<span class="token punctuation">;</span>
+<span class="token keyword">bool</span> m<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	m<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>maxn<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>pri<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> t<span class="token operator">:</span>pri<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">*</span>t<span class="token operator">&gt;=</span>maxn<span class="token punctuation">)</span><span class="token keyword">break</span><span class="token punctuation">;</span>
+			m<span class="token punctuation">[</span>i<span class="token operator">*</span>t<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//质数的i倍一定是合数，标记</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">%</span>t<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token comment">//若i是某个质数的倍数，那i一定在遍历到这个质数时就被筛掉了</span>
+            <span class="token comment">//所以i乘上后续的其他质数p，等价于k*t*p一定被t的其他倍数筛选，没必要再筛选下去了</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1125,54 +1179,6 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/082029649.html">
-                    <div class="card-image">
-                        
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="All-in at the Pre-flop">
-                        
-                        <span class="card-title">All-in at the Pre-flop</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            2024 牛客多校(10) H
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
-                                    刷题集
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2024/082034656.html">
                     <div class="card-image">
                         
@@ -1188,9 +1194,9 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1212,6 +1218,54 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
                     
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                         <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/081417424.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="cats 的电脑中毒">
+                        
+                        <span class="card-title">cats 的电脑中毒</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2024 杭电多校(8) L
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
+                                    刷题集
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%85%AC%E5%BC%8F/">
+                        <span class="chip bg-color">公式</span>
                     </a>
                     
                 </div>

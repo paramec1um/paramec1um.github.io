@@ -424,8 +424,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-二维几何基本运算"><a href="#1-二维几何基本运算" class="headerlink" title="1. 二维几何基本运算"></a>1. 二维几何基本运算</h2><p>在开始写算法模板前，要定义好相关的结构体</p>
-<h3 id="1-1-定义点与向量"><a href="#1-1-定义点与向量" class="headerlink" title="1.1 定义点与向量"></a>1.1 定义点与向量</h3><h4 id="1-1-1-二维向量运算："><a href="#1-1-1-二维向量运算：" class="headerlink" title="1.1.1 二维向量运算："></a>1.1.1 二维向量运算：</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">IN</span> <span class="token expression"><span class="token keyword">inline</span></span></span>
+                <h2 id="二维几何基本运算"><a href="#二维几何基本运算" class="headerlink" title="二维几何基本运算"></a>二维几何基本运算</h2><p>在开始写算法模板前，要定义好相关的结构体</p>
+<h3 id="定义点与向量"><a href="#定义点与向量" class="headerlink" title="定义点与向量"></a>定义点与向量</h3><h4 id="二维向量运算："><a href="#二维向量运算：" class="headerlink" title="二维向量运算："></a>二维向量运算：</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">IN</span> <span class="token expression"><span class="token keyword">inline</span></span></span>
 <span class="token keyword">struct</span> <span class="token class-name">Point</span><span class="token punctuation">{</span>
     <span class="token keyword">double</span> x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
 	<span class="token keyword">int</span> id<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
@@ -449,7 +449,7 @@ IN <span class="token keyword">double</span> <span class="token function">dis</s
 <p>$a\times b$ 表示的几何意义是$|a|\cdot|b|\cdot sin(\theta) $，其中 $\theta $ 为 $a,b$ 的夹角，定义为从向量 $a$ <strong>逆时针</strong>旋转到向量 $b$ 的角度</p>
 <p>叉乘在后续的算法模板中，大量应用于判断点与向量的位置关系以及两个向量之间的位置关系</p>
 </blockquote>
-<h4 id="1-1-2-三维向量运算"><a href="#1-1-2-三维向量运算" class="headerlink" title="1.1.2 三维向量运算"></a>1.1.2 三维向量运算</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">IN</span> <span class="token expression"><span class="token keyword">inline</span></span></span>
+<h4 id="三维向量运算"><a href="#三维向量运算" class="headerlink" title="三维向量运算"></a>三维向量运算</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">IN</span> <span class="token expression"><span class="token keyword">inline</span></span></span>
 <span class="token keyword">struct</span> <span class="token class-name">Point</span><span class="token punctuation">{</span>
     <span class="token keyword">double</span> x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
 	<span class="token keyword">int</span> id<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
@@ -472,7 +472,7 @@ IN <span class="token keyword">double</span> <span class="token function">dis</s
 <blockquote>
 <p>三维向量的叉乘求的是与两个向量垂直的法向量</p>
 </blockquote>
-<h3 id="1-2-定义点向式直线"><a href="#1-2-定义点向式直线" class="headerlink" title="1.2 定义点向式直线"></a>1.2 定义点向式直线</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//u为直线上一点，v为方向向量</span>
+<h3 id="定义点向式直线"><a href="#定义点向式直线" class="headerlink" title="定义点向式直线"></a>定义点向式直线</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//u为直线上一点，v为方向向量</span>
 <span class="token comment">//在模板里面的方向向量v的水平指向均指向x轴正向</span>
 <span class="token keyword">struct</span> <span class="token class-name">Line</span><span class="token punctuation">{</span>
     Point u<span class="token punctuation">,</span>v<span class="token punctuation">;</span>
@@ -494,7 +494,7 @@ IN Point <span class="token function">Inter</span><span class="token punctuation
 
 
 
-<h3 id="1-3-计算n边形的面积"><a href="#1-3-计算n边形的面积" class="headerlink" title="1.3 计算n边形的面积"></a>1.3 计算n边形的面积</h3><p>已知 $n$ 边形所有顶点的坐标<br>用 <code>Point d[n]</code> 表示这些点，则可以通过<code>高斯面积公式</code>计算其面积为：</p>
+<h3 id="计算n边形的面积"><a href="#计算n边形的面积" class="headerlink" title="计算n边形的面积"></a>计算n边形的面积</h3><p>已知 $n$ 边形所有顶点的坐标<br>用 <code>Point d[n]</code> 表示这些点，则可以通过<code>高斯面积公式</code>计算其面积为：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">IN <span class="token keyword">double</span> <span class="token function">S</span><span class="token punctuation">(</span>Point d<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">double</span> s<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -507,10 +507,10 @@ IN Point <span class="token function">Inter</span><span class="token punctuation
 <blockquote>
 <p>注意：叉乘不满足交换律，所以千万不能写反！</p>
 </blockquote>
-<h2 id="1-4-计算平行面卡壳最短距离"><a href="#1-4-计算平行面卡壳最短距离" class="headerlink" title="1.4 计算平行面卡壳最短距离"></a>1.4 计算平行面卡壳最短距离</h2><p>用 $O(n^2)$ 维护所有的向量，之后求出两两向量之间构成的法向量（叉乘求出）</p>
+<h2 id="计算平行面卡壳最短距离"><a href="#计算平行面卡壳最短距离" class="headerlink" title="计算平行面卡壳最短距离"></a>计算平行面卡壳最短距离</h2><p>用 $O(n^2)$ 维护所有的向量，之后求出两两向量之间构成的法向量（叉乘求出）</p>
 <p>枚举所有的点到法向量上的最长和最短投影，两个投影相减即为答案</p>
 <p>复杂度：$O(n^5)$</p>
-<h2 id="2-凸包相关"><a href="#2-凸包相关" class="headerlink" title="2 凸包相关"></a>2 凸包相关</h2><h3 id="2-1-凸包构造"><a href="#2-1-凸包构造" class="headerlink" title="2.1 凸包构造"></a>2.1 凸包构造</h3><p><code>Andrew</code>算法：<br>按 $先x,后y$ 的优先顺序排序<br>从前往后扫一次，求下半凸包<br>再从后往前扫一次，求上半凸包</p>
+<h2 id="凸包相关"><a href="#凸包相关" class="headerlink" title="凸包相关"></a>凸包相关</h2><h3 id="凸包构造"><a href="#凸包构造" class="headerlink" title="凸包构造"></a>凸包构造</h3><p><code>Andrew</code>算法：<br>按 $先x,后y$ 的优先顺序排序<br>从前往后扫一次，求下半凸包<br>再从后往前扫一次，求上半凸包</p>
 <p>当前点在直线下方时弹栈，否则加入</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//n记录点数，top记录栈大小，栈尾有重复的1号点</span>
 <span class="token comment">//a[]表示输入的点集，stk[]表示从[1,top]顺时针构造凸包的点集</span>
@@ -535,7 +535,7 @@ Point a<span class="token punctuation">[</span>maxn<span class="token punctuatio
 <p>凸包是顺时针的，所以<code>(stk[top]-stk[top-1])</code> 的向量指向 $x$ 轴负方向</p>
 <p>当这个角度是负数时代表点在向量左侧 </p>
 </blockquote>
-<h3 id="2-2-旋转卡壳"><a href="#2-2-旋转卡壳" class="headerlink" title="2.2 旋转卡壳"></a>2.2 旋转卡壳</h3><h4 id="2-2-1-求二维凸包直径"><a href="#2-2-1-求二维凸包直径" class="headerlink" title="2.2.1 求二维凸包直径"></a>2.2.1 求二维凸包直径</h4><p>一般来说，要先用<code>Andrew</code>算法求凸包</p>
+<h3 id="旋转卡壳"><a href="#旋转卡壳" class="headerlink" title="旋转卡壳"></a>旋转卡壳</h3><h4 id="求二维凸包直径"><a href="#求二维凸包直径" class="headerlink" title="求二维凸包直径"></a>求二维凸包直径</h4><p>一般来说，要先用<code>Andrew</code>算法求凸包</p>
 <p>求出凸包之后，用比较面积的方式求出离初始直线最远的一点</p>
 <p>之后发现直线每旋转一个点，最远点也会随之旋转一个点</p>
 <p>扫描时间为 $O(1)$，扫描 $n$ 次，所以时间复杂度为 $O(n)$</p>
@@ -553,7 +553,7 @@ Point a<span class="token punctuation">[</span>maxn<span class="token punctuatio
 
 
 
-<h4 id="2-2-2-求K远点对距离"><a href="#2-2-2-求K远点对距离" class="headerlink" title="2.2.2 求K远点对距离"></a>2.2.2 求K远点对距离</h4><p>由于一次旋转卡壳算法可以求出最远点对</p>
+<h4 id="求K远点对距离"><a href="#求K远点对距离" class="headerlink" title="求K远点对距离"></a>求K远点对距离</h4><p>由于一次旋转卡壳算法可以求出最远点对</p>
 <p>所以在 $K$ 较小的时候可以作 $K$ 次旋转卡壳</p>
 <p>用大小为 $K$ 的小根堆维护答案</p>
 <p>每次求出当前最远的点对 $(u,v)$ 并把剩余所有点到这两点的距离加入堆中，之后删除这两点</p>
@@ -624,7 +624,7 @@ priority_queue<span class="token operator">&lt;</span>ll<span class="token punct
 
 
 
-<h4 id="2-2-3-求最小矩形覆盖"><a href="#2-2-3-求最小矩形覆盖" class="headerlink" title="2.2.3 求最小矩形覆盖"></a>2.2.3 求最小矩形覆盖</h4><p>旋转卡壳求出最高点</p>
+<h4 id="求最小矩形覆盖"><a href="#求最小矩形覆盖" class="headerlink" title="求最小矩形覆盖"></a>求最小矩形覆盖</h4><p>旋转卡壳求出最高点</p>
 <p>利用往右的点一定是点积由正到负，往左的点的点积一定由负到正的特点求出左右边界点</p>
 <p>利用直线相交求出交点与面积，或者直接求面积 </p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//top,stk[]与Andrew算法中意义相同</span>
@@ -646,7 +646,7 @@ priority_queue<span class="token operator">&lt;</span>ll<span class="token punct
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="2-2-4-求最大内接四边形"><a href="#2-2-4-求最大内接四边形" class="headerlink" title="2.2.4 求最大内接四边形"></a>2.2.4 求最大内接四边形</h4><p>旋转卡壳可以求凸包内最大内接四边形</p>
+<h4 id="求最大内接四边形"><a href="#求最大内接四边形" class="headerlink" title="求最大内接四边形"></a>求最大内接四边形</h4><p>旋转卡壳可以求凸包内最大内接四边形</p>
 <p>最大内接四边形的对角线一定是<strong>对踵点</strong></p>
 <p>通过对角线确定最大内接四边形<br>在维护对角线的时候，利用最大内接四边形的特点，用类似旋转卡壳的思想维护另一条对角线 </p>
 <p>时间复杂度：$O(nlogn+n)$ 排序复杂度加旋转卡壳复杂度</p>
@@ -671,7 +671,7 @@ priority_queue<span class="token operator">&lt;</span>ll<span class="token punct
 <p>对踵点：对于凸包上的一点 $P$ ，过 $P$ 作一条不经过凸包内部的直线 $l$ ，在凸包上能够找到另一个点 $P’$ 使得过 $P’$ 作的 $l$ 发平行线同样不经过凸包内部， $P，P’$ 互为对踵点。</p>
 <p>旋转卡壳算法的本质其实就是利用了对踵点的特点，即 $P$ 顺时针移动位置时， $P’$ 必然也会顺时针移动</p>
 </blockquote>
-<h2 id="3-半平面交"><a href="#3-半平面交" class="headerlink" title="3 半平面交"></a>3 半平面交</h2><h3 id="3-1-半平面交求面积"><a href="#3-1-半平面交求面积" class="headerlink" title="3.1 半平面交求面积"></a>3.1 半平面交求面积</h3><p>在点向直线的基础上，选择构造下半平面<br>先对极角进行排序<br>在保证极角不同的情况下，对于当前预插入向量：</p>
+<h2 id="半平面交"><a href="#半平面交" class="headerlink" title="半平面交"></a>半平面交</h2><h3 id="半平面交求面积"><a href="#半平面交求面积" class="headerlink" title="半平面交求面积"></a>半平面交求面积</h3><p>在点向直线的基础上，选择构造下半平面<br>先对极角进行排序<br>在保证极角不同的情况下，对于当前预插入向量：</p>
 <ul>
 <li><p>弹出队尾，若上一个交点在向量右侧则弹出</p>
 </li>
@@ -715,7 +715,7 @@ Line e<span class="token punctuation">[</span>maxn<span class="token punctuation
 
 
 
-<h3 id="3-2-半平面交确定可见直线"><a href="#3-2-半平面交确定可见直线" class="headerlink" title="3.2 半平面交确定可见直线"></a>3.2 半平面交确定可见直线</h3><p>从上方往下看，作上半面的半平面交<br>从下往上看，作下半面半平面交<br>之后按照极角排序<br>对于一个预插入的直线</p>
+<h3 id="半平面交确定可见直线"><a href="#半平面交确定可见直线" class="headerlink" title="半平面交确定可见直线"></a>半平面交确定可见直线</h3><p>从上方往下看，作上半面的半平面交<br>从下往上看，作下半面半平面交<br>之后按照极角排序<br>对于一个预插入的直线</p>
 <ul>
 <li>若栈中元素小于两个直接插入</li>
 <li>若当前直线与栈顶<code>top</code>直线的交点在上上一个<code>top-1</code>直线的下方则弹出栈顶元素</li>
@@ -741,7 +741,7 @@ Line e<span class="token punctuation">[</span>maxn<span class="token punctuation
         cout<span class="token operator">&lt;&lt;</span>ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token char">' '</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h2 id="4-平面最近点对"><a href="#4-平面最近点对" class="headerlink" title="4. 平面最近点对"></a>4. 平面最近点对</h2><p>用分治法可以在 $O(nlogn)$ 的时间内求出平面最近点对</p>
+<h2 id="平面最近点对"><a href="#平面最近点对" class="headerlink" title="平面最近点对"></a>平面最近点对</h2><p>用分治法可以在 $O(nlogn)$ 的时间内求出平面最近点对</p>
 <p>首先对所有的点按照 $x$ 的坐标从小到大排序</p>
 <p>之后取所有点的中位数 $mid$，并不断计算点 $mid$ 两边区域中，各点对的最小距离</p>
 <p>假设求出的最小距离为 $d$ </p>
@@ -787,9 +787,9 @@ ll <span class="token function">get_close</span><span class="token punctuation">
 	cout<span class="token operator">&lt;&lt;</span><span class="token function">get_close</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="5-随机增量法"><a href="#5-随机增量法" class="headerlink" title="5. 随机增量法"></a>5. 随机增量法</h2><p>随机增量法通常与随机化结合，追求均摊时间复杂度最优化</p>
+<h2 id="随机增量法"><a href="#随机增量法" class="headerlink" title="随机增量法"></a>随机增量法</h2><p>随机增量法通常与随机化结合，追求均摊时间复杂度最优化</p>
 <p>类似于数学归纳法，本质是将一个问题转化为规模刚好小一层的子问题，解决后加入当前对象<br>$$<br>T(n)=T(n-1)+g(n)<br>$$</p>
-<h3 id="5-1-最小圆覆盖"><a href="#5-1-最小圆覆盖" class="headerlink" title="5.1 最小圆覆盖"></a>5.1 最小圆覆盖</h3><p>由于三点确定一个圆</p>
+<h3 id="最小圆覆盖"><a href="#最小圆覆盖" class="headerlink" title="最小圆覆盖"></a>最小圆覆盖</h3><p>由于三点确定一个圆</p>
 <p>设前 $i-1$ 个点构成的圆半径为 $r$ </p>
 <p>对于第 $i$ 个点，若在圆内或者圆上，则属于合法点，不作任何处理</p>
 <p>若在圆外，则需要构造新的圆且点 $i$ 必然在圆上</p>
@@ -1427,8 +1427,8 @@ Point <span class="token function">GetCircle</span><span class="token punctuatio
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
+                    <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
+                        <span class="chip bg-color">概率论</span>
                     </a>
                     
                 </div>
