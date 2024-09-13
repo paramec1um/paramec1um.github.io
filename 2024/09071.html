@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分汤, Paramec1um">
+    <meta name="keywords" content="Paramec1um">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分汤 | Paramec1um</title>
+    <title>Paramec1um</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -250,12 +250,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">分汤</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -369,25 +369,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
-                                <span class="chip bg-color">概率论</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
-                                刷题集
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -396,7 +383,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-09-12
+                    2024-09-07
                 </div>
                 
 
@@ -420,33 +407,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="分汤"><a href="#分汤" class="headerlink" title="分汤"></a>分汤</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/soup-servings/description/?envType=problem-list-v2&amp;envId=probability-and-statistics">808. 分汤 - 力扣</a></p>
-<hr>
-<h2 id="题型描述"><a href="#题型描述" class="headerlink" title="题型描述"></a>题型描述</h2><p>二维概率DP</p>
-<p>数据范围小时DP，范围大时为特定值</p>
-<h2 id="题目描述-数据范围"><a href="#题目描述-数据范围" class="headerlink" title="题目描述&amp;数据范围"></a>题目描述&amp;数据范围</h2><p><img src="D:\1Blog\source\img\7.png"></p>
-<p>$1\leq n\leq 10^9$</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>数据较小的时候可以DP</p>
-<p>由于以 $25$ 为分汤单位，所以可以整体除 $25$ </p>
-<p>设 $dp[i][j]$ 表示 $A,B$ 分别有 $i,j$ 份时的答案</p>
-<p>显然边界条件为：<br>$$<br>dp[i][j]=<br>\begin{cases}<br>0,(i&gt;0,j=0)\<br>0.5,(i=0,j=0)\<br>1,(i=0,j&gt;0)\<br>\end{cases}<br>$$<br>转移方程：<br>$$<br>dp[i][j]=\frac{1}{4}(dp[i-4][j-0]+dp[i-3][j-1]+dp[i-2][j-2]+dp[i-1][j-3])<br>$$</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">double</span> dp<span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">double</span> <span class="token function">soupServings</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	    n<span class="token operator">=</span><span class="token function">ceil</span><span class="token punctuation">(</span>n<span class="token operator">*</span><span class="token number">1.0</span><span class="token operator">/</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&gt;</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
-	    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0.25</span><span class="token operator">*</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token function">max</span><span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span><span class="token function">max</span><span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token function">max</span><span class="token punctuation">(</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span><span class="token function">max</span><span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token function">max</span><span class="token punctuation">(</span>j<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span><span class="token function">max</span><span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token function">max</span><span class="token punctuation">(</span>j<span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+                <h2 id="1-分工"><a href="#1-分工" class="headerlink" title="1. 分工"></a>1. 分工</h2><h3 id="1-1-比赛开始时"><a href="#1-1-比赛开始时" class="headerlink" title="1.1 比赛开始时"></a>1.1 比赛开始时</h3><p>两个人分别看题，一个人写模板。</p>
+<ul>
+<li>快速幂</li>
+<li>gcd</li>
+<li>模运算</li>
+<li>链式前向星封装</li>
+</ul>
+<h3 id="1-2-主机在使用，但其他题有结果"><a href="#1-2-主机在使用，但其他题有结果" class="headerlink" title="1.2 主机在使用，但其他题有结果"></a>1.2 主机在使用，但其他题有结果</h3><p>副机可以先写，剩下的看别的</p>
+<h3 id="1-3-主机空，但其他题目没有结果"><a href="#1-3-主机空，但其他题目没有结果" class="headerlink" title="1.3 主机空，但其他题目没有结果"></a>1.3 主机空，但其他题目没有结果</h3><p>剩下边讨论边写，</p>
+<h3 id="1-4-主机上交，但是错误"><a href="#1-4-主机上交，但是错误" class="headerlink" title="1.4 主机上交，但是错误"></a>1.4 主机上交，但是错误</h3><p>转为检查部分</p>
+<h2 id="2-检查"><a href="#2-检查" class="headerlink" title="2. 检查"></a>2. 检查</h2><h3 id="2-1-时限"><a href="#2-1-时限" class="headerlink" title="2.1 时限"></a>2.1 时限</h3><p>约15分钟，若没有写出来，帮忙检查的人去看别的题</p>
+<h3 id="2-2-检查区域"><a href="#2-2-检查区域" class="headerlink" title="2.2 检查区域"></a>2.2 检查区域</h3><h4 id="2-2-1-数据"><a href="#2-2-1-数据" class="headerlink" title="2.2.1 数据"></a>2.2.1 数据</h4><ul>
+<li>数据类型</li>
+<li>数据范围</li>
+<li>数组大小</li>
+<li>运算范围</li>
+</ul>
+<h3 id="2-2-2-方法"><a href="#2-2-2-方法" class="headerlink" title="2.2.2 方法"></a>2.2.2 方法</h3><ul>
+<li>函数结构（递归return前要回溯）</li>
+<li>初始化</li>
+<li>算符优先级</li>
+</ul>
 
                 
             </div>
@@ -473,7 +455,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://paramec1um.github.io/2024/091232331.html">https://paramec1um.github.io/2024/091232331.html</a>
+                    <a href="https://paramec1um.github.io/2024/09071.html">https://paramec1um.github.io/2024/09071.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -510,11 +492,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
-                                    <span class="chip bg-color">概率论</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -949,76 +927,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/09131912.html">
+                <a href="/2024/090941248.html">
                     <div class="card-image">
                         
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="图论专题模板">
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="随机过程">
                         
-                        <span class="card-title">图论专题模板</span>
+                        <span class="card-title">随机过程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            图论专题模板
+                            2024 CCPC网络预选赛 E
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-09
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%A8%A1%E6%9D%BF/" class="post-category">
-                                    模板
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%9B%BE%E8%AE%BA/">
-                        <span class="chip bg-color">图论</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%A8%A1%E6%9D%BF/">
-                        <span class="chip bg-color">模板</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/091018628.html">
-                    <div class="card-image">
-                        
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="飞机座位表分配">
-                        
-                        <span class="card-title">飞机座位表分配</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            leetcode 1227
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-10
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1036,6 +962,54 @@
                     
                     <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
                         <span class="chip bg-color">概率论</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/090632192.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="Find the Gap">
+                        
+                        <span class="card-title">Find the Gap</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2023 CCPC网络预选赛 J
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
+                                    刷题集
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">
+                        <span class="chip bg-color">计算几何</span>
                     </a>
                     
                 </div>
@@ -1166,13 +1140,6 @@
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
