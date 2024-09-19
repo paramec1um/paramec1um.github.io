@@ -6,7 +6,7 @@
   <link href="https://paramec1um.github.io/atom.xml" rel="self"/>
   
   <link href="https://paramec1um.github.io/"/>
-  <updated>2024-09-13T10:32:25.216Z</updated>
+  <updated>2024-09-19T13:31:40.151Z</updated>
   <id>https://paramec1um.github.io/</id>
   
   <author>
@@ -17,11 +17,162 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>A Game about Increasing Sequences</title>
+    <link href="https://paramec1um.github.io/2024/091940056.html"/>
+    <id>https://paramec1um.github.io/2024/091940056.html</id>
+    <published>2024-09-19T13:00:53.000Z</published>
+    <updated>2024-09-19T13:31:40.151Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;A-Game-about-Increasing-Sequences&quot;&gt;&lt;a href=&quot;#A-Game-about-Increasing-Sequences&quot; class=&quot;headerlink&quot; title=&quot;A Game about Increasing</summary>
+        
+      
+    
+    
+    
+    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="博弈论" scheme="https://paramec1um.github.io/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两个盒子中球的颜色相同的概率</title>
+    <link href="https://paramec1um.github.io/2024/09197550.html"/>
+    <id>https://paramec1um.github.io/2024/09197550.html</id>
+    <published>2024-09-19T13:00:18.000Z</published>
+    <updated>2024-09-19T13:31:21.838Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;两个盒子中球的颜色相同的概率&quot;&gt;&lt;a href=&quot;#两个盒子中球的颜色相同的概率&quot; class=&quot;headerlink&quot; title=&quot;两个盒子中球的颜色相同的概率&quot;&gt;&lt;/a&gt;两个盒子中球的颜色相同的概率&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="概率论" scheme="https://paramec1um.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最优化问题与数学规划</title>
+    <link href="https://paramec1um.github.io/2024/091411601.html"/>
+    <id>https://paramec1um.github.io/2024/091411601.html</id>
+    <published>2024-09-14T11:31:01.000Z</published>
+    <updated>2024-09-19T13:31:21.830Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;最优化问题总结&quot;&gt;&lt;a href=&quot;#最优化问题总结&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数模" scheme="https://paramec1um.github.io/categories/%E6%95%B0%E6%A8%A1/"/>
+    
+    
+    <category term="数学规划" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搞笑世界杯</title>
+    <link href="https://paramec1um.github.io/2024/091417603.html"/>
+    <id>https://paramec1um.github.io/2024/091417603.html</id>
+    <published>2024-09-14T09:53:13.000Z</published>
+    <updated>2024-09-19T13:31:21.838Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;搞笑世界杯&quot;&gt;&lt;a href=&quot;#搞笑世界杯&quot; class=&quot;headerlink&quot; title=&quot;搞笑世界杯&quot;&gt;&lt;/a&gt;搞笑世界杯&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P2719&quot;&gt;P2719</summary>
+        
+      
+    
+    
+    
+    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="概率论" scheme="https://paramec1um.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法模板</title>
+    <link href="https://paramec1um.github.io/2024/091440307.html"/>
+    <id>https://paramec1um.github.io/2024/091440307.html</id>
+    <published>2024-09-14T08:12:49.000Z</published>
+    <updated>2024-09-19T13:31:21.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基础算法模板&quot;&gt;&lt;a href=&quot;#基础算法模板&quot; class=&quot;headerlink&quot; title=&quot;基础算法模板&quot;&gt;&lt;/a&gt;基础算法模板&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dora and C++</title>
+    <link href="https://paramec1um.github.io/2024/091462871.html"/>
+    <id>https://paramec1um.github.io/2024/091462871.html</id>
+    <published>2024-09-14T07:55:09.000Z</published>
+    <updated>2024-09-19T13:31:21.838Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Dora-and-C&quot;&gt;&lt;a href=&quot;#Dora-and-C&quot; class=&quot;headerlink&quot; title=&quot;Dora and C++&quot;&gt;&lt;/a&gt;Dora and C++&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="数论" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>新21点</title>
     <link href="https://paramec1um.github.io/2024/091317988.html"/>
     <id>https://paramec1um.github.io/2024/091317988.html</id>
     <published>2024-09-13T10:20:27.000Z</published>
-    <updated>2024-09-13T10:32:25.216Z</updated>
+    <updated>2024-09-14T10:04:49.233Z</updated>
     
     
       
@@ -73,7 +224,7 @@
     <link href="https://paramec1um.github.io/2024/091232331.html"/>
     <id>https://paramec1um.github.io/2024/091232331.html</id>
     <published>2024-09-12T12:27:51.000Z</published>
-    <updated>2024-09-12T13:16:40.696Z</updated>
+    <updated>2024-09-14T10:04:09.319Z</updated>
     
     
       
@@ -98,7 +249,7 @@
     <link href="https://paramec1um.github.io/2024/091018628.html"/>
     <id>https://paramec1um.github.io/2024/091018628.html</id>
     <published>2024-09-10T07:25:25.000Z</published>
-    <updated>2024-09-12T13:16:40.698Z</updated>
+    <updated>2024-09-14T10:03:52.753Z</updated>
     
     
       
@@ -123,7 +274,7 @@
     <link href="https://paramec1um.github.io/2024/091023911.html"/>
     <id>https://paramec1um.github.io/2024/091023911.html</id>
     <published>2024-09-10T06:38:03.000Z</published>
-    <updated>2024-09-12T13:16:40.698Z</updated>
+    <updated>2024-09-14T10:03:45.278Z</updated>
     
     
       
@@ -148,7 +299,7 @@
     <link href="https://paramec1um.github.io/2024/090941248.html"/>
     <id>https://paramec1um.github.io/2024/090941248.html</id>
     <published>2024-09-09T08:34:37.000Z</published>
-    <updated>2024-09-12T12:32:55.594Z</updated>
+    <updated>2024-09-14T07:52:32.644Z</updated>
     
     
       
@@ -245,14 +396,14 @@
     <link href="https://paramec1um.github.io/2024/09045240.html"/>
     <id>https://paramec1um.github.io/2024/09045240.html</id>
     <published>2024-09-04T09:48:20.000Z</published>
-    <updated>2024-09-06T10:58:25.573Z</updated>
+    <updated>2024-09-14T05:19:29.492Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;公平席位分配模型&quot;&gt;&lt;a href=&quot;#公平席位分配模型&quot; class=&quot;headerlink&quot; title=&quot;公平席位分配模型&quot;&gt;&lt;/a&gt;公平席位分配模型&lt;/h1&gt;&lt;h2 id=&quot;1-问题重述&quot;&gt;&lt;a href=&quot;#1-问题重述&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;公平席位分配模型&quot;&gt;&lt;a href=&quot;#公平席位分配模型&quot; class=&quot;headerlink&quot; title=&quot;公平席位分配模型&quot;&gt;&lt;/a&gt;公平席位分配模型&lt;/h1&gt;&lt;h2 id=&quot;问题重述&quot;&gt;&lt;a href=&quot;#问题重述&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -295,35 +446,6 @@
   </entry>
   
   <entry>
-    <title>排序算法模板</title>
-    <link href="https://paramec1um.github.io/2024/083034636.html"/>
-    <id>https://paramec1um.github.io/2024/083034636.html</id>
-    <published>2024-08-30T08:37:04.000Z</published>
-    <updated>2024-08-30T13:19:03.298Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-归并排序&quot;&gt;&lt;a href=&quot;#1-归并排序&quot; class=&quot;headerlink&quot; title=&quot;1.  归并排序&quot;&gt;&lt;/a&gt;1.  归并排序&lt;/h2&gt;&lt;p&gt;基于分治思想的排序&lt;/p&gt;
-&lt;p&gt;复杂度稳定为 $O(nlogn)$&lt;/p&gt;
-&lt;p&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
-    <category term="排序" scheme="https://paramec1um.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>刷题笔记-计算几何专题</title>
     <link href="https://paramec1um.github.io/2024/083013698.html"/>
     <id>https://paramec1um.github.io/2024/083013698.html</id>
@@ -355,7 +477,7 @@
     <link href="https://paramec1um.github.io/2024/08303396.html"/>
     <id>https://paramec1um.github.io/2024/08303396.html</id>
     <published>2024-08-30T05:24:15.000Z</published>
-    <updated>2024-09-13T10:21:22.058Z</updated>
+    <updated>2024-09-19T13:06:06.102Z</updated>
     
     
       
@@ -402,140 +524,6 @@
     <category term="笔记" scheme="https://paramec1um.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="数学建模" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算几何模板</title>
-    <link href="https://paramec1um.github.io/2024/082050897.html"/>
-    <id>https://paramec1um.github.io/2024/082050897.html</id>
-    <published>2024-08-20T11:05:33.000Z</published>
-    <updated>2024-09-12T13:15:55.893Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;二维几何基本运算&quot;&gt;&lt;a href=&quot;#二维几何基本运算&quot; class=&quot;headerlink&quot; title=&quot;二维几何基本运算&quot;&gt;&lt;/a&gt;二维几何基本运算&lt;/h2&gt;&lt;p&gt;在开始写算法模板前，要定义好相关的结构体&lt;/p&gt;
-&lt;h3 id=&quot;定义点与向量&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
-    <category term="计算几何" scheme="https://paramec1um.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>All-in at the Pre-flop</title>
-    <link href="https://paramec1um.github.io/2024/082029649.html"/>
-    <id>https://paramec1um.github.io/2024/082029649.html</id>
-    <published>2024-08-20T11:05:33.000Z</published>
-    <updated>2024-09-12T12:33:01.101Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;All-in-at-the-Pre-flop&quot;&gt;&lt;a href=&quot;#All-in-at-the-Pre-flop&quot; class=&quot;headerlink&quot; title=&quot;All-in at the Pre-flop&quot;&gt;&lt;/a&gt;All-in at the</summary>
-        
-      
-    
-    
-    
-    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
-    
-    
-    <category term="概率论" scheme="https://paramec1um.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构模板</title>
-    <link href="https://paramec1um.github.io/2024/082034656.html"/>
-    <id>https://paramec1um.github.io/2024/082034656.html</id>
-    <published>2024-08-20T07:28:42.000Z</published>
-    <updated>2024-09-13T07:58:06.999Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-线段树模板&quot;&gt;&lt;a href=&quot;#1-线段树模板&quot; class=&quot;headerlink&quot; title=&quot;1.线段树模板&quot;&gt;&lt;/a&gt;1.线段树模板&lt;/h1&gt;&lt;h2 id=&quot;模板&quot;&gt;&lt;a href=&quot;#模板&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
-    <category term="数据结构" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数学专题模板</title>
-    <link href="https://paramec1um.github.io/2024/08207817.html"/>
-    <id>https://paramec1um.github.io/2024/08207817.html</id>
-    <published>2024-08-20T07:28:42.000Z</published>
-    <updated>2024-09-12T11:56:32.185Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;基本运算&quot;&gt;&lt;a href=&quot;#基本运算&quot; class=&quot;headerlink&quot; title=&quot;基本运算&quot;&gt;&lt;/a&gt;基本运算&lt;/h2&gt;&lt;p&gt;一些常用的数学基本运算&lt;/p&gt;
-&lt;h3 id=&quot;快速幂-逆元&quot;&gt;&lt;a href=&quot;#快速幂-逆元&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-    <category term="模板" scheme="https://paramec1um.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
-    <category term="数学" scheme="https://paramec1um.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cats 的电脑中毒</title>
-    <link href="https://paramec1um.github.io/2024/081417424.html"/>
-    <id>https://paramec1um.github.io/2024/081417424.html</id>
-    <published>2024-08-14T11:29:03.000Z</published>
-    <updated>2024-08-30T05:28:03.991Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;2024 杭电多校(8) L&lt;br&gt;&lt;a href=&quot;https://vjudge.net/problem/HDU-7528&quot;&gt;https://vjudge.net/problem/HDU-7528&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;题型描述&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="刷题集" scheme="https://paramec1um.github.io/categories/%E5%88%B7%E9%A2%98%E9%9B%86/"/>
-    
-    
-    <category term="公式" scheme="https://paramec1um.github.io/tags/%E5%85%AC%E5%BC%8F/"/>
     
   </entry>
   

@@ -423,7 +423,7 @@
                 <h1 id="飞机座位表分配"><a href="#飞机座位表分配" class="headerlink" title="飞机座位表分配"></a>飞机座位表分配</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/airplane-seat-assignment-probability/">1227. 飞机座位分配概率 - 力扣</a></p>
 <hr>
 <h2 id="题型描述"><a href="#题型描述" class="headerlink" title="题型描述"></a>题型描述</h2><p>递推式求概率</p>
-<h2 id="题目描述-数据范围"><a href="#题目描述-数据范围" class="headerlink" title="题目描述&amp;数据范围"></a>题目描述&amp;数据范围</h2><p><img src="D:\1Blog\source\img\6.png"></p>
+<h2 id="题目描述-数据范围"><a href="#题目描述-数据范围" class="headerlink" title="题目描述&amp;数据范围"></a>题目描述&amp;数据范围</h2><p><img src="/../../../../img/6.png"></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>设 $f(n)$ 表示第 $n$ 个人坐在自己座位上的概率</p>
 <ul>
 <li><p>$\frac{1}{n}$ 的概率，当第一个人坐在自己座位上时，$f(n)=1$ </p>
@@ -437,8 +437,13 @@
 <p>若坐在其它位置，则问题再次缩小</p>
 </li>
 </ul>
-<p>由此可见，坐在 $[2,n-1]$ 中的 $t$ 时，$f(n)$ 缩小至 $f(n-t+1)$，得<br>$$<br>f(n)=\frac{1}{n}*1+\frac{1}{n}*0+\frac{1}{n}<em>\sum_{i=2}^{n-1}f(n-i+1)<br>$$<br>由于直接计算会达到 $n^2$ 的复杂度，考虑求解递推式<br>$$<br>n</em>f(n)=1+\sum_{i=2}^{n-1}f(n-i+1)\<br>(n-1)<em>f(n-1)=1+\sum_{i=2}^{n-2}f((n-1)-i+1)<br>$$<br>相减得到<br>$$<br>n</em>f(n)-(n-1)*f(n-1)=f(n-1)\<br>f(n)=f(n-1)<br>$$<br>而 $f(1)=1$ 为特殊情况</p>
-<p>所以得到<br>$$<br>f(x)=\begin{cases}<br>1,x=1\<br>0.5,x&gt;=2<br>\end{cases}<br>$$</p>
+<p>由此可见，坐在 $[2,n-1]$ 中的 $t$ 时，$f(n)$ 缩小至 $f(n-t+1)$，得<br>$$<br>f(n)=\frac{1}{n}*1+\frac{1}{n}*0+\frac{1}{n}*\sum_{i=2}^{n-1}f(n-i+1)<br>$$<br>由于直接计算会达到 $n^2$ 的复杂度，考虑求解递推式</p>
+<p>$$<br>n*f(n)=1+\sum_{i=2}^{n-1}f(n-i+1)<br>$$</p>
+<p>$$<br>(n-1)*f(n-1)=1+\sum_{i=2}^{n-2}f((n-1)-i+1)<br>$$</p>
+<p>相减得到<br>$$<br>n*f(n)-(n-1)*f(n-1)=f(n-1)<br>$$</p>
+<p>$$<br>f(n)=f(n-1)<br>$$</p>
+<p>而 $f(1)=1$ 为特殊情况</p>
+<p>所以得到<br>$$<br>f ( x ) = \begin {cases}<br>1 &amp; x = 1 \\<br>0.5 &amp; x &gt;= 2<br>\end {cases}<br>$$</p>
 
                 
             </div>
@@ -952,7 +957,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概率DP
+                            leetcode 808 分汤
                         
                     </div>
                     <div class="publish-info">
@@ -1000,7 +1005,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            洛谷 P5104
+                            洛谷 P5104 发红包
                         
                     </div>
                     <div class="publish-info">

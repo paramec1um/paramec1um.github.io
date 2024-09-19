@@ -588,12 +588,12 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
 <blockquote>
 <p>广义孪生素数猜想认为：任意偶数可以被两个素数之差表示，且这两个素数有无穷多组</p>
 </blockquote>
-<h2 id="4-数论-GCD"><a href="#4-数论-GCD" class="headerlink" title="4. 数论-GCD"></a>4. 数论-GCD</h2><p>输入两个 $n$ 阶二进制数，有三种常见的GCD写法</p>
-<h3 id="4-1-普通GCD"><a href="#4-1-普通GCD" class="headerlink" title="4.1 普通GCD"></a>4.1 普通GCD</h3><p>利用辗转相除：$gcd(a,b)=gcd(b,a % b)$</p>
+<h2 id="数论-GCD"><a href="#数论-GCD" class="headerlink" title="数论-GCD"></a>数论-GCD</h2><p>输入两个 $n$ 阶二进制数，有三种常见的GCD写法</p>
+<h3 id="普通GCD"><a href="#普通GCD" class="headerlink" title="普通GCD"></a>普通GCD</h3><p>利用辗转相除：$gcd(a,b)=gcd(b,a % b)$</p>
 <p>时间复杂度：$O(n)$</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token operator">!</span>b<span class="token operator">?</span>a<span class="token operator">:</span><span class="token function">gcd</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span>a<span class="token operator">%</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="4-2-二进制GCD"><a href="#4-2-二进制GCD" class="headerlink" title="4.2 二进制GCD"></a>4.2 二进制GCD</h3><p>利用更相减损术+stein优化</p>
+<h3 id="二进制GCD"><a href="#二进制GCD" class="headerlink" title="二进制GCD"></a>二进制GCD</h3><p>利用更相减损术+stein优化</p>
 <p>更相减损术：$gcd(a,b)=gcd(a-b,b)$</p>
 <p>stein优化：</p>
 <ul>
@@ -619,7 +619,8 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
 <blockquote>
 <p>时间复杂度受到 <code>__builtin_ctz()</code> 的影响，若改变  <code>int</code> 类型为 <code>long long</code> 类型，时间会翻倍</p>
 </blockquote>
-<h2 id="5-组合数"><a href="#5-组合数" class="headerlink" title="5. 组合数"></a>5. 组合数</h2><h3 id="5-1-组合数计算"><a href="#5-1-组合数计算" class="headerlink" title="5.1  组合数计算"></a>5.1  组合数计算</h3><p>组合数预处理</p>
+<h3 id="GCD性质"><a href="#GCD性质" class="headerlink" title="GCD性质"></a>GCD性质</h3><h4 id="A-B问题"><a href="#A-B问题" class="headerlink" title="+A+B问题"></a>+A+B问题</h4><p>对一个数 $S$ 不断进行 $+A,+B,-A,-B$ 四种操作，将会得到 $S+k\text{ gcd(A,B)}$</p>
+<h2 id="组合数"><a href="#组合数" class="headerlink" title="组合数"></a>组合数</h2><h3 id="组合数计算"><a href="#组合数计算" class="headerlink" title="组合数计算"></a>组合数计算</h3><p>组合数预处理</p>
 <p>空间：$O(n^2)$</p>
 <p>利用杨辉三角递推式计算：$C_n^m=C_{n-1}^{m}+C_{n-1}^{m-1}$</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> c<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -1179,6 +1180,54 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2024/082029649.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="All-in at the Pre-flop">
+                        
+                        <span class="card-title">All-in at the Pre-flop</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2024 牛客多校(10) H
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
+                                    刷题集
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
+                        <span class="chip bg-color">概率论</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2024/082034656.html">
                     <div class="card-image">
                         
@@ -1194,9 +1243,9 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1218,54 +1267,6 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
                     
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                         <span class="chip bg-color">数据结构</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/081417424.html">
-                    <div class="card-image">
-                        
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="cats 的电脑中毒">
-                        
-                        <span class="card-title">cats 的电脑中毒</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            2024 杭电多校(8) L
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
-                                    刷题集
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%85%AC%E5%BC%8F/">
-                        <span class="chip bg-color">公式</span>
                     </a>
                     
                 </div>
