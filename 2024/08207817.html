@@ -476,6 +476,7 @@ ll fac<span class="token punctuation">[</span>maxn<span class="token punctuation
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">using</span> ll<span class="token operator">=</span>Mint<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="位操作"><a href="#位操作" class="headerlink" title="位操作"></a>位操作</h3><h4 id="检查2的幂次方"><a href="#检查2的幂次方" class="headerlink" title="检查2的幂次方"></a>检查2的幂次方</h4><p>若一个数 $a$ 是 $2$ 的幂次方，则 $a&amp;(a-1)=0$</p>
 <h2 id="数论-众数"><a href="#数论-众数" class="headerlink" title="数论-众数"></a>数论-众数</h2><h3 id="摩尔投票算法"><a href="#摩尔投票算法" class="headerlink" title="摩尔投票算法"></a>摩尔投票算法</h3><p>当一个元素出现超过 $n/2$ 时，可以用摩尔投票算法</p>
 <p>时间为 $O(n)$ 空间为 $O(1)$ </p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -620,7 +621,7 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
 <p>时间复杂度受到 <code>__builtin_ctz()</code> 的影响，若改变  <code>int</code> 类型为 <code>long long</code> 类型，时间会翻倍</p>
 </blockquote>
 <h3 id="GCD性质"><a href="#GCD性质" class="headerlink" title="GCD性质"></a>GCD性质</h3><h4 id="A-B问题"><a href="#A-B问题" class="headerlink" title="+A+B问题"></a>+A+B问题</h4><p>对一个数 $S$ 不断进行 $+A,+B,-A,-B$ 四种操作，将会得到 $S+k\text{ gcd(A,B)}$</p>
-<h2 id="组合数"><a href="#组合数" class="headerlink" title="组合数"></a>组合数</h2><h3 id="组合数计算"><a href="#组合数计算" class="headerlink" title="组合数计算"></a>组合数计算</h3><p>组合数预处理</p>
+<h2 id="数论-组合数"><a href="#数论-组合数" class="headerlink" title="数论-组合数"></a>数论-组合数</h2><h3 id="组合数计算"><a href="#组合数计算" class="headerlink" title="组合数计算"></a>组合数计算</h3><p>组合数预处理</p>
 <p>空间：$O(n^2)$</p>
 <p>利用杨辉三角递推式计算：$C_n^m=C_{n-1}^{m}+C_{n-1}^{m-1}$</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> c<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -639,7 +640,7 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
 <p>需要阶乘预处理</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">ll <span class="token function">C</span><span class="token punctuation">(</span>ll n<span class="token punctuation">,</span>ll m<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> fac<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">/</span><span class="token punctuation">(</span>fac<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token operator">*</span>fac<span class="token punctuation">[</span>n<span class="token operator">-</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="概率与期望"><a href="#概率与期望" class="headerlink" title="概率与期望"></a>概率与期望</h2><h3 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h3><h4 id="概率DP"><a href="#概率DP" class="headerlink" title="概率DP"></a>概率DP</h4><p>概率DP的范围就比较广泛了，主要总结一下题型</p>
+<h2 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h2><h3 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h3><h4 id="概率DP"><a href="#概率DP" class="headerlink" title="概率DP"></a>概率DP</h4><p>概率DP的范围就比较广泛了，主要总结一下题型</p>
 <ol>
 <li>数据范围较小的时候可以DP，较大时概率为特定值</li>
 </ol>
@@ -657,7 +658,14 @@ ll ans<span class="token operator">=</span><span class="token number">0</span><s
 <p>如某事件失败一次就会终止，问终止前期望可以成功几次</p>
 <p>只要把 “成功发生” 的概率 $p$ 更换为失败的概率即可</p>
 </blockquote>
-<h2 id="6-筛法"><a href="#6-筛法" class="headerlink" title="6. 筛法"></a>6. 筛法</h2><h3 id="6-1-线性筛"><a href="#6-1-线性筛" class="headerlink" title="6.1 线性筛"></a>6.1 线性筛</h3><p>$O(n)$ 时间打出素数表</p>
+<h2 id="博弈论"><a href="#博弈论" class="headerlink" title="博弈论"></a>博弈论</h2><p>博弈论往往会有点摸不着头脑，可以先手玩几个试试。</p>
+<h3 id="NIM游戏"><a href="#NIM游戏" class="headerlink" title="NIM游戏"></a>NIM游戏</h3><ol>
+<li>一堆石头，每个人每次能取走 $[1,k]$ 个石头，则石头数量为 $k+1$ 的倍数时，后手赢，否则先手赢。</li>
+</ol>
+<h3 id="除数博弈"><a href="#除数博弈" class="headerlink" title="除数博弈"></a>除数博弈</h3><ol>
+<li>有 $n$ 个石头，每次取走总数的约数，则 $n$ 为偶数先手赢(先手一直取 $1$)，否则后手赢(后手一直取 $1$)</li>
+</ol>
+<h2 id="筛法"><a href="#筛法" class="headerlink" title="筛法"></a>筛法</h2><h3 id="线性筛"><a href="#线性筛" class="headerlink" title="线性筛"></a>线性筛</h3><p>$O(n)$ 时间打出素数表</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span>pri<span class="token punctuation">;</span>
 <span class="token keyword">bool</span> m<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>

@@ -421,6 +421,176 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="最优化问题总结"><a href="#最优化问题总结" class="headerlink" title="最优化问题总结"></a>最优化问题总结</h1><hr>
+<h2 id="线性规划算法原理"><a href="#线性规划算法原理" class="headerlink" title="线性规划算法原理"></a>线性规划算法原理</h2><h3 id="线性规划问题的规范形式"><a href="#线性规划问题的规范形式" class="headerlink" title="线性规划问题的规范形式"></a>线性规划问题的规范形式</h3><p>线性规划问题普遍可以转化为如下的形式：<br>$$<br>\text{maxmize: } z=\sum_{i=1}^{m} c_ix_i=CX\\<br>s.t: \begin {cases}<br>AX=b\\<br>X\ge0<br>\end {cases}<br>\\<br>A=\begin{bmatrix}<br>a_{11}&amp;a_{12}&amp;{\cdots}&amp;a_{1m}\\<br>a_{21}&amp;a{22}&amp;{\cdots}&amp;a_{2m}\\<br>{\vdots}&amp;{\vdots}&amp;{\ddots}&amp;{\vdots}&amp;\\<br>a_{m1}&amp;a_{m2}&amp;{\cdots}&amp;a_{mm}<br>\end{bmatrix}<br>$$</p>
+<p>线性规划的标准形式规定：</p>
+<ul>
+<li>必须为最大化问题</li>
+<li>约束必须为等式</li>
+<li>决策变量必须为非负</li>
+</ul>
+<p>若问题需要求解最小值，则可以通过取负转化为求最大值</p>
+<h3 id="单纯形法"><a href="#单纯形法" class="headerlink" title="单纯形法"></a>单纯形法</h3><p>单纯形法主要分为如下几个步骤：</p>
+<h4 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h4><p>在把线性规划问题抽象成<strong>目标函数+约束条件不等式</strong>的形式之后，先对其进行标准化</p>
+<p>标准化的过程利用了<strong>对偶原则</strong>：</p>
+<p>对于问题 $p$ 描述为<br>$$<br>\text{maxmize }Z=CX<br>\\<br>s.t.\begin{cases}<br>AX\le b\\<br>X\ge 0<br>\end{cases}<br>$$<br>其对偶的问题 $D$ 可描述为<br>$$<br>\text{minmize }W=b^TY<br>\\<br>s.t.\begin{cases}<br>A^TY\ge C^T\\<br>Y\ge 0<br>\end{cases}<br>$$<br>且原问题与对偶问题同时有最优解，两组最优解满足 $CX_0=b^TY_0$</p>
+<p>可以通过这个性质转化最大化与最小化问题</p>
+<h4 id="松弛化"><a href="#松弛化" class="headerlink" title="松弛化"></a>松弛化</h4><p>标准化后的线性规划问题任然不满足单纯形要求的规范形式，所以还要引入松弛变量进行松弛化。</p>
+<p>松弛变量的个数与<strong>约束方程数量</strong>一致</p>
+<h4 id="单纯形矩阵"><a href="#单纯形矩阵" class="headerlink" title="单纯形矩阵"></a>单纯形矩阵</h4><p>得到规范的线性规划方程后，就可以写出单纯形矩阵了，规范形式如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">目标函数系数 $C_1$</th>
+<th align="center">目标函数系数 $C_2$</th>
+<th align="center">$\cdots$</th>
+<th align="center">目标函数系数 $C_n$</th>
+<th align="center">目标值 $-Z$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">约束方程系数 $a_{11}$</td>
+<td align="center">约束方程系数 $a_{12}$</td>
+<td align="center">$\cdots$</td>
+<td align="center">约束方程系数 $a_{m1}$</td>
+<td align="center">方程常数 $b_1$</td>
+</tr>
+<tr>
+<td align="center">约束方程系数 $a_{12}$</td>
+<td align="center">约束方程系数 $a_{22}$</td>
+<td align="center">$\cdots$</td>
+<td align="center">约束方程系数 $a_{m2}$</td>
+<td align="center">方程常数 $b_2$</td>
+</tr>
+<tr>
+<td align="center">$\vdots$</td>
+<td align="center">$\vdots$</td>
+<td align="center">$\ddots$</td>
+<td align="center">$\vdots$</td>
+<td align="center">$\vdots$</td>
+</tr>
+<tr>
+<td align="center">约束方程系数 $a_{m1}$</td>
+<td align="center">约束方程系数 $a_{m2}$</td>
+<td align="center">$\cdots$</td>
+<td align="center">约束方程系数 $a_{mn}$</td>
+<td align="center">方程常数 $b_m$</td>
+</tr>
+</tbody></table>
+<p>注意：有些变量没有出现在方程中，在表中的系数填 $0$</p>
+<h4 id="转轴操作"><a href="#转轴操作" class="headerlink" title="转轴操作"></a>转轴操作</h4><blockquote>
+<p>转轴是单纯形法中最重要的操作</p>
+<p>在介绍转轴操作之前，必须明确的是单纯形法求解线性规划问题的目标</p>
+<p><strong>利用单纯形法，最终是希望能够确定一组基变量 $X$ 和这组基变量对应的方程右侧的常数 $B$，求解出来后，$B_i$ 即为 $X_i$ 的最优解，其余的变量为非基变量，取 $0$  即可，这样方案就能确定。</strong></p>
+<p>而求解这组基变量的过程就要不断进行转轴操作，不断的交换基变量与非基变量</p>
+</blockquote>
+<p>初始，令所有的松弛变量作为基变量，此时所有基变量的目标函数系数为 $0$ </p>
+<p>而在非基变量中，若有变量的系数是大于 $0$ 的，那么增大这个变量就能增加目标函数</p>
+<p>所以可以贪心的选择非基变量中值大于 $0$ 且最大的那个作为换入变量，计为 $x_e$</p>
+<p>然而增大这个变量，由于有约束的存在，别的变量必然减小</p>
+<p>根据约束方程能够算出对于每个方程，$x_e$ 的最大取值（即其他所有变量取0时的值，第 $i$ 个方程 为 $\frac{b_i}{x_e}$）</p>
+<p>当这个取值最小的时候才能够保证其他的变量不取到负数（不能违背所有变量非负的约束）</p>
+<p>所以取这一行对应的变量作为换出变量，记为 $x_l$（行怎么能对应变量呢？画一下单纯形矩阵会发现，初始的基变量即松弛变量全部取出后会形成单位矩阵，可以用行定位）</p>
+<p>此时令 $x_e$ 成为新的基变量，$x_l$ 成为非基变量操作如下：</p>
+<p>对第 $l$ 行缩小 $x_e$ 倍，使得 $x_e=1$ ，同时确保第 $e$ 列只有 $x_e$ 的值为 $1$ </p>
+<p>这样一次转轴就完成</p>
+<p>直到发现非基变量当中没有变量的系数大于 $0$ ，此时增大任何变量都不能使目标函数增大，即求得最优解</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>C++</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//m行，n列单纯形矩阵</span>
+<span class="token comment">//id[i]记录第i个决策变量对应的方案</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> N<span class="token operator">=</span><span class="token number">1007</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> M<span class="token operator">=</span><span class="token number">10007</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">double</span> INF<span class="token operator">=</span><span class="token number">1e15</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">;</span><span class="token comment">//m行，n列</span>
+<span class="token keyword">double</span> a<span class="token punctuation">[</span>M<span class="token punctuation">]</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>b<span class="token punctuation">[</span>M<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> id<span class="token punctuation">[</span>N<span class="token operator">+</span>M<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">pivot</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span><span class="token keyword">int</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//转轴</span>
+	<span class="token keyword">double</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//行列倍增变换系数，若直接使用行内的数值，此数值会随着元素更新而改变</span>
+	<span class="token comment">//第l行除a[l][e]</span>
+	<span class="token function">swap</span><span class="token punctuation">(</span>id<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">,</span>id<span class="token punctuation">[</span>n<span class="token operator">+</span>l<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	k<span class="token operator">=</span><span class="token number">1</span><span class="token operator">/</span>a<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	a<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span>e<span class="token punctuation">)</span><span class="token keyword">continue</span><span class="token punctuation">;</span>
+		a<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">*=</span>k<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	b<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">*=</span>k<span class="token punctuation">;</span>
+
+	<span class="token comment">//e列对应的所有行，除了l行都变为0</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>m<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span>l<span class="token punctuation">)</span><span class="token keyword">continue</span><span class="token punctuation">;</span>
+		k<span class="token operator">=</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span>e<span class="token punctuation">)</span><span class="token keyword">continue</span><span class="token punctuation">;</span>
+			a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">-=</span>k<span class="token operator">*</span>a<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-=</span>k<span class="token operator">*</span>b<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// 输出中间结果 </span>
+    <span class="token comment">//for(int i=0;i&lt;=m;++i){</span>
+	<span class="token comment">// 	for(int j=1;j&lt;=n;++j){</span>
+	<span class="token comment">// 		cout&lt;&lt;a[i][j]&lt;&lt;' ';</span>
+	<span class="token comment">// 	}</span>
+	<span class="token comment">// 	cout&lt;&lt;b[i]&lt;&lt;'\n';</span>
+	<span class="token comment">// }</span>
+	<span class="token comment">// cout&lt;&lt;'\n';</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">bool</span> <span class="token function">simplex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//单纯形法，确定l，e</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">int</span> e<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>l<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//确定列</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&gt;</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">)</span>e<span class="token operator">=</span>i<span class="token punctuation">;</span><span class="token comment">//寻找最大的,大于0的系数c，f=0时，c[f]=0</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>e<span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token keyword">double</span> mn<span class="token operator">=</span>INF<span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>m<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//确定行</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>mn<span class="token operator">&gt;</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">/</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				mn<span class="token operator">=</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">/</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">;</span>
+				l<span class="token operator">=</span>i<span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>l<span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//w</span>
+		<span class="token function">pivot</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>	
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	cin<span class="token operator">&gt;&gt;</span>n<span class="token operator">&gt;&gt;</span>m<span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>m<span class="token operator">+</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>id<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token operator">-</span>n<span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		cin<span class="token operator">&gt;&gt;</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>m<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">int</span> s<span class="token punctuation">,</span>t<span class="token punctuation">;</span>
+		cin<span class="token operator">&gt;&gt;</span>s<span class="token operator">&gt;&gt;</span>t<span class="token operator">&gt;&gt;</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>s<span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>t<span class="token punctuation">;</span><span class="token operator">++</span>j<span class="token punctuation">)</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+    <span class="token comment">// 输出中间结果 </span>
+	<span class="token comment">// for(int i=0;i&lt;=m;++i){</span>
+	<span class="token comment">// 	for(int j=1;j&lt;=n;++j){</span>
+	<span class="token comment">// 		cout&lt;&lt;a[i][j]&lt;&lt;' ';</span>
+	<span class="token comment">// 	}</span>
+	<span class="token comment">// 	cout&lt;&lt;b[i]&lt;&lt;'\n';</span>
+	<span class="token comment">// }</span>
+	<span class="token comment">// cout&lt;&lt;'\n';</span>
+
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">simplex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		cout<span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token operator">-</span>b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span><span class="token comment">//最优解</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token operator">+</span>m<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			cout<span class="token operator">&lt;&lt;</span>i<span class="token operator">&lt;&lt;</span><span class="token string">": "</span><span class="token operator">&lt;&lt;</span>b<span class="token punctuation">[</span>id<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token char">'\n'</span><span class="token punctuation">;</span><span class="token comment">//最优解方案</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	ios<span class="token double-colon punctuation">::</span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cout<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    fstream <span class="token function">in</span><span class="token punctuation">(</span><span class="token string">"in.txt"</span><span class="token punctuation">,</span>ios<span class="token double-colon punctuation">::</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>cin<span class="token punctuation">.</span><span class="token function">rdbuf</span><span class="token punctuation">(</span>in<span class="token punctuation">.</span><span class="token function">rdbuf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> T<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//cin&gt;&gt;T;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>T<span class="token operator">--</span><span class="token punctuation">)</span><span class="token function">solve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
