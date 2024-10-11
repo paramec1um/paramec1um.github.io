@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="公平席位分配模型, Paramec1um">
+    <meta name="keywords" content="评价模型, Paramec1um">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>公平席位分配模型 | Paramec1um</title>
+    <title>评价模型 | Paramec1um</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.3.0">
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Paramec1um" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Paramec1um" type="application/atom+xml">
 </head>
 
 
@@ -255,7 +255,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">公平席位分配模型</h1>
+                    <h1 class="description center-align post-title">评价模型</h1>
                 </div>
             </div>
         </div>
@@ -371,12 +371,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%A8%A1/">
-                                <span class="chip bg-color">数模</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%88%9D%E7%AD%89%E6%A8%A1%E5%9E%8B/">
-                                <span class="chip bg-color">初等模型</span>
+                            <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                <span class="chip bg-color">模型</span>
                             </a>
                         
                     </div>
@@ -400,7 +396,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-09-04
+                    2024-10-07
                 </div>
                 
 
@@ -424,7 +420,145 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="公平席位分配模型"><a href="#公平席位分配模型" class="headerlink" title="公平席位分配模型"></a>公平席位分配模型</h1><h2 id="问题重述"><a href="#问题重述" class="headerlink" title="问题重述"></a>问题重述</h2>
+                <h1 id="评价模型"><a href="#评价模型" class="headerlink" title="评价模型"></a>评价模型</h1><p>评价类问题：对于同一个目标不同方案或者因素之间的比较问题</p>
+<h2 id="熵权法"><a href="#熵权法" class="headerlink" title="熵权法"></a>熵权法</h2><p>在进行评价之前，我们需要量化用于评价的指标</p>
+<p>量化的指标必须满足以下的条件：</p>
+<ol>
+<li>指标类型必须相同</li>
+<li>指标量纲必须相同</li>
+</ol>
+<p>量化过程称为赋权，即重新给每个指标生成一个权值</p>
+<p>为了客观的给指标赋权，可以利用熵权法</p>
+<h3 id="熵权法的过程"><a href="#熵权法的过程" class="headerlink" title="熵权法的过程"></a>熵权法的过程</h3><table>
+<thead>
+<tr>
+<th><strong>Step 1:</strong>  正向化，归一化指标</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Step 2:</strong>  计算指标熵值</td>
+</tr>
+<tr>
+<td><strong>Step 3:</strong>  计算指标权重系数</td>
+</tr>
+</tbody></table>
+<h3 id="指标类型与正向化"><a href="#指标类型与正向化" class="headerlink" title="指标类型与正向化"></a>指标类型与正向化</h3><p>一般指标分为四类：</p>
+<p>极大型指标：越大越好的指标，不用转化</p>
+<p>极小型指标：越小越好的指标。正向化时可以取相反数，若全部为正数则也可以取倒数</p>
+<p>区间型指标：在某个区间内是最好的。正向化遵循如下规则：<br>$$<br>x_{new}=\begin{cases}<br>1-\fracNaN&amp;x &lt; a\\<br>1&amp;a \le x \le b\\<br>1-\fracNaN &amp; x &gt; b<br>\end{cases}<br>$$<br>中值型指标：越接近某个值 $m$ 越好，正向化时遵循如下规则：<br>$$<br>x_{new}=1-\frac{|x-m|}{max(|x-m|)}<br>$$<br>其中 $x_{max}$ 表示数据集中指标的最大值</p>
+<blockquote>
+<p>越远离某个值越好时，$x_{new}=\frac{|x-m|}{max(|x-m|)}$</p>
+</blockquote>
+<p>在正向化完成时，为了消除量纲的影响，要对所有的指标进行归一化，一般有三种方法：</p>
+<p>$min-max$法：遵循 $x_{new}=\frac{x-x_{min}}{x_{max}-x_{min}}$ 规约；保留了数据原本的分布特征</p>
+<p>$sum$ 法：遵循 $x_{new}=\frac{x}{sum(X)}$ 规约；保留了数据原本的分布特征</p>
+<p>$Z-score$法：遵循  $Z=\frac{X-u}{\sigma}$ 规约，其中 $u$ 为均值，$\sigma$ 为方差；将数据转变成正态分布</p>
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p>简介：</p>
+<p>​		熵权法（Entropy Weight Method, EWM）是一种基于客观原则的权重赋值方法，其核心理念源自信息论。该方法通过评估各指标数据的分散程度，计算并修正各指标的熵权。通常情况下，某一指标的信息熵值较低，表明该指标的数值变异程度较大，能够提供更丰富的信息，因此在综合评价中发挥的作用更为显著，其权重相应增大；反之，若某一指标的信息熵值较高，则说明该指标的数值变异程度较小，信息贡献有限，从而在综合评价中的影响力减弱，其权重亦随之降低。</p>
+<p>熵权法算法过程（latex）：</p>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\nonl</span> <span class="token function selector">\textbf</span><span class="token punctuation">{</span>Step 1:<span class="token punctuation">}</span> 对所有指标进行正向化和标准化<span class="token function selector">\\</span>
+<span class="token function selector">\nonl</span> <span class="token function selector">\textbf</span><span class="token punctuation">{</span>Step 2:<span class="token punctuation">}</span> 根据熵值计算公式计算信息熵<span class="token function selector">\\</span>
+<span class="token function selector">\nonl</span> <span class="token function selector">\textbf</span><span class="token punctuation">{</span>Step 3:<span class="token punctuation">}</span> 利用信息熵计算每个指标的权重系数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>熵权法代码（Python）：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># data为矩阵，每一列代表一个指标所有的数据</span>
+<span class="token keyword">def</span> <span class="token function">entropyWeight</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  data <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token comment"># 归一化</span>
+  P <span class="token operator">=</span> data <span class="token operator">/</span> data<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token comment"># 计算熵值</span>
+  E <span class="token operator">=</span> np<span class="token punctuation">.</span>nansum<span class="token punctuation">(</span><span class="token operator">-</span>P <span class="token operator">*</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>P<span class="token operator">+</span><span class="token number">1e-10</span><span class="token punctuation">)</span> <span class="token operator">/</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token comment"># 计算权系数</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> E<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> E<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Topsis-分析法"><a href="#Topsis-分析法" class="headerlink" title="Topsis 分析法"></a>Topsis 分析法</h2><p>Topsis分析法用于科学计算每个决策的优劣程度</p>
+<h3 id="Topsis算法的过程"><a href="#Topsis算法的过程" class="headerlink" title="Topsis算法的过程"></a>Topsis算法的过程</h3><table>
+<thead>
+<tr>
+<th><strong>Step 1:</strong>  计算正负理想解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Step 2:</strong>  计算每个解到正负理想解的距离</td>
+</tr>
+<tr>
+<td><strong>Step 3:</strong>  计算每个解的相似度并排序</td>
+</tr>
+</tbody></table>
+<h3 id="正负理想解"><a href="#正负理想解" class="headerlink" title="正负理想解"></a>正负理想解</h3><p>正负理想解计算：<br>$$<br>Z^+=max(z_j)\<br>Z^-=min(z_j)<br>$$<br>即取出每个指标的最大值构成正理想解，每个指标的最小值构成负理想解</p>
+<h3 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h3><p>距离的计算有以下几种：</p>
+<ol>
+<li>余弦距离：</li>
+</ol>
+<p>$$<br>cos(x,y)=\frac{x^Ty}{|x||y|}<br>$$</p>
+<ol start="2">
+<li>欧几里得距离：</li>
+</ol>
+<p>$$<br>Euclidean (x,y) =\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}<br>$$</p>
+<ol start="3">
+<li>曼哈顿距离：</li>
+</ol>
+<p>$$<br>Manhaton(x,y)=\sum_{i=1}^{n}|x_i-y_i|<br>$$</p>
+<p>计算到正负理想解的距离：<br>$$<br>D^+<em>i=\sqrt{\sum</em>{j=1}^{n}w_i(z_{ij}-Z^+<em>j)}\<br>D^-<em>i=\sqrt{\sum</em>{j=1}^{n}w_i(z</em>{ij}-Z^-_j)}\<br>$$</p>
+<h3 id="相似度"><a href="#相似度" class="headerlink" title="相似度"></a>相似度</h3><p>与正理想解的相似度<br>$$<br>W_i=\frac{D^-_i}{D^-_i+D^+_i}<br>$$<br>与负理想解的相似度<br>$$<br>W_i=\frac{D^+_i}{D^-_i+D^+_i}<br>$$</p>
+<h3 id="写作-1"><a href="#写作-1" class="headerlink" title="写作"></a>写作</h3><p>Topsis简介：</p>
+<p>​	TOPSIS（Technique for Order Preference by Similarity to Ideal Solution）分析法是一种广泛应用的多属性决策支持工具，旨在充分挖掘原始数据所蕴含的信息，以全面反映各评价方案之间的相对差异。其基本流程包括计算每个方案与理想解和负理想解之间的距离，以此评估方案的优劣。理想解代表了各项指标的最优表现，而负理想解则对应于各项指标的最劣表现。在此框架下，距离理想解越近的方案被视为表现越优，而距离负理想解越远的方案则被认为表现越差，以此作为评价优劣的标准。</p>
+<p>Topsis伪代码：</p>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\nonl</span> <span class="token function selector">\textbf</span><span class="token punctuation">{</span>Step 1:<span class="token punctuation">}</span> 导入所有指标对应的数据，构造初始矩阵<span class="token function selector">\\</span>
+<span class="token function selector">\nonl</span> <span class="token function selector">\textbf</span><span class="token punctuation">{</span>Step 2:<span class="token punctuation">}</span> 计算最优和最劣方案<span class="token function selector">\\</span>
+<span class="token function selector">\nonl</span> <span class="token function selector">\textbf</span><span class="token punctuation">{</span>Step 3:<span class="token punctuation">}</span> 计算各评价方案的最优方案和最劣方案的相似程度<span class="token function selector">\\</span>
+<span class="token function selector">\nonl</span> <span class="token function selector">\textbf</span><span class="token punctuation">{</span>Step 4:<span class="token punctuation">}</span> 计算各评价方案的最优方案的贴近度<span class="token function selector">\\</span>
+<span class="token function selector">\nonl</span> <span class="token function selector">\textbf</span><span class="token punctuation">{</span>Step 5:<span class="token punctuation">}</span> 根据贴近度大小进行排序<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>Topsis代码（Python）：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># A1为正向化与归一化后的数据矩阵</span>
+<span class="token comment"># w为对应列数据的权重</span>
+<span class="token comment"># TOPSIS方法函数</span>
+<span class="token keyword">def</span> <span class="token function">TOPSIS</span><span class="token punctuation">(</span>A1<span class="token punctuation">,</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    Z<span class="token operator">=</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>A1<span class="token punctuation">)</span>
+
+    <span class="token comment">#计算正、负理想解</span>
+
+    Zmax<span class="token operator">=</span>np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span>A1<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token builtin">float</span><span class="token punctuation">)</span>
+
+    Zmin<span class="token operator">=</span>np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span>A1<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token builtin">float</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>A1<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+        <span class="token keyword">if</span> j<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+
+          Zmax<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token builtin">min</span><span class="token punctuation">(</span>Z<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+          Zmin<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token builtin">max</span><span class="token punctuation">(</span>Z<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+
+          Zmax<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token builtin">max</span><span class="token punctuation">(</span>Z<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+          Zmin<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token builtin">min</span><span class="token punctuation">(</span>Z<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+  <span class="token comment">#计算各个方案的相对贴近度C</span>
+
+    C<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>A1<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+          Smax<span class="token operator">=</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>w<span class="token operator">*</span>np<span class="token punctuation">.</span>square<span class="token punctuation">(</span>Z<span class="token punctuation">[</span>i<span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token operator">-</span>Zmax<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+          Smin<span class="token operator">=</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>w<span class="token operator">*</span>np<span class="token punctuation">.</span>square<span class="token punctuation">(</span>Z<span class="token punctuation">[</span>i<span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token operator">-</span>Zmin<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+          C<span class="token punctuation">.</span>append<span class="token punctuation">(</span>Smin<span class="token operator">/</span><span class="token punctuation">(</span>Smax<span class="token operator">+</span>Smin<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    C<span class="token operator">=</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>C<span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> C<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -450,7 +584,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://paramec1um.github.io/2024/09045240.html">https://paramec1um.github.io/2024/09045240.html</a>
+                    <a href="https://paramec1um.github.io/2024/10074108.html">https://paramec1um.github.io/2024/10074108.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -488,12 +622,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%A8%A1/">
-                                    <span class="chip bg-color">数模</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%88%9D%E7%AD%89%E6%A8%A1%E5%9E%8B/">
-                                    <span class="chip bg-color">初等模型</span>
+                                <a href="/tags/%E6%A8%A1%E5%9E%8B/">
+                                    <span class="chip bg-color">模型</span>
                                 </a>
                             
                         </div>
@@ -930,43 +1060,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/090545121.html">
+                <a href="/2024/100944385.html">
                     <div class="card-image">
                         
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="A. Coprime Array">
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="宏包">
                         
-                        <span class="card-title">A. Coprime Array</span>
+                        <span class="card-title">宏包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            The 3rd Universal Cup. Stage 6 Osijek - A题
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-10-09
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
-                                    刷题集
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Paramec1um
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -978,47 +1096,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/090316016.html">
+                <a href="/2024/100322155.html">
                     <div class="card-image">
                         
-                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="Power Sum">
+                        <img src="https://img.picui.cn/free/2024/08/17/66c07b46a4d70.jpg" class="responsive-img" alt="latex 表格">
                         
-                        <span class="card-title">Power Sum</span>
+                        <span class="card-title">latex 表格</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2021 CCPC网络预选赛 F
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-10-03
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%88%B7%E9%A2%98%E9%9B%86/" class="post-category">
-                                    刷题集
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Paramec1um
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9E%84%E9%80%A0/">
-                        <span class="chip bg-color">构造</span>
-                    </a>
-                    
                 </div>
                 
             </div>
